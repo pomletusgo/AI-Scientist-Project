@@ -1,0 +1,34 @@
+[
+    {
+        "Name": "adaptive_block_size",
+        "Title": "Adaptive Block Size: Dynamic Context Window Adjustment for Efficient Training",
+        "Experiment": "Modify the model to dynamically adjust its block size during training, starting with a smaller block size and gradually increasing it. This could potentially lead to faster initial training and better long-range dependency learning.",
+        "Interestingness": 6,
+        "Feasibility": 4,
+        "Novelty": 4
+    },
+    {
+        "Name": "layerwise_learning_rates",
+        "Title": "Layer-wise Learning Rate Adaptation: Optimizing Training Dynamics in Transformer Models",
+        "Experiment": "Implement layer-wise learning rates, where each transformer layer has its own learning rate. Modify the configure_optimizers function to assign different learning rates to different layers, with deeper layers having lower learning rates. Compare the training dynamics, convergence speed, and final performance with the baseline model.",
+        "Interestingness": 4,
+        "Feasibility": 6,
+        "Novelty": 2
+    },
+    {
+        "Name": "scheduled_dropout",
+        "Title": "Scheduled Dropout: Dynamic Regularization for Character-Level Transformers",
+        "Experiment": "Implement a dropout schedule that smoothly varies the model's dropout probability during training. Add a scheduler function (e.g., cosine annealing from 0.4 to 0.0 or linear decay from 0.3 to 0.1) that returns the current dropout rate given the iteration number. In the training loop, after computing the rate, update all dropout layers in the model (nn.Dropout instances in self.attn_dropout, self.resid_dropout, self.transformer.drop, and any other dropout) by setting their `p` attribute. For models with config.dropout, also update the config parameter. Run experiments on shakespeare_char, enwik8, and text8 with 3 seeds each, comparing fixed dropout at p=0.2 (baseline) against several schedules (cosine, linear, step). Log the dropout rate per iteration and report final validation loss, training curves, and inference perplexity. Compare also against fixed dropout at the schedule's starting and ending rates to isolate the effect of the schedule.",
+        "Interestingness": 7,
+        "Feasibility": 8,
+        "Novelty": 6
+    },
+    {
+        "Name": "multi_token_prediction",
+        "Title": "Multi-Token Prediction Objective for Small Character-Level Language Models",
+        "Experiment": "Modify the GPT model to predict both the immediate next token and the token after that (next-next token) during training. In the model's forward method, after obtaining the transformer's final hidden state, compute two sets of logits: `logits` from the existing `lm_head` (for immediate next token) and a new linear layer `lm_head_next` (with same output dimension, not weight-tied) for the next-next token. For training, the targets for the next-next token are obtained by shifting the original target tensor by one more position (i.e., using elements `y[i, 1:]` and ignoring the last position). The loss is a weighted combination: `loss = alpha * F.cross_entropy(logits, targets, ignore_index=-1) + (1-alpha) * F.cross_entropy(logits_next, targets_next, ignore_index=-1)` with alpha=0.5. Ensure sequence boundaries are handled by ignoring invalid positions (e.g., the last two tokens in the batch). During inference, only the regular `lm_head` is used for generation. Run experiments on shakespeare_char, enwik8, and text8 with 3 seeds each. Compare with baseline single-token prediction in terms of training curves, final validation loss, and inference time. Hypothesize that multi-token prediction improves validation perplexity and generation quality, especially for datasets with stronger long-range structure (e.g., enwik8). Log the two loss components separately for analysis.",
+        "Interestingness": 8,
+        "Feasibility": 6,
+        "Novelty": 8
+    }
+]
