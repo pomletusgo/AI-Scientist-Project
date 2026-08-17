@@ -1,0 +1,312 @@
+{
+  "folder": "results/paper_2605/20260803_202124_gradient_counterfactual_curvature",
+  "started_at": "2026-08-03T21:32:31.975415",
+  "rounds": 1,
+  "converged": false,
+  "rounds_detail": [
+    {
+      "round": 1,
+      "reviews": {
+        "Methodology": {
+          "Summary": "This paper proposes to train MLPs with a curvature regularizer—penalizing the squared L2 norm of the gradient of the cross-entropy loss w.r.t. the input—to simultaneously achieve high accuracy and smooth decision boundaries that facilitate stable gradient-based counterfactual generation. The authors claim that the regularized models achieve 100% counterfactual validity and reduced perturbation distances compared to an unregularized baseline.",
+          "Strengths": [
+            "The problem of producing smooth models for interpretable counterfactual generation is relevant and timely.",
+            "The paper attempts to address an inherent contradiction between accuracy and local smoothness."
+          ],
+          "Weaknesses": [
+            "Core methodological flaw: The regularizer penalizes ||∇_x CE(x, y_true)||², but the counterfactual search uses a different loss (cross-entropy toward a target class). The induced smoothness does not directly correspond to the gradients used during inversion, creating a fundamental mismatch. The authors provide no justification for why this choice should help.",
+            "The problem formulation is incomplete. The paper does not fully define the counterfactual search objective, the proximity penalty, or the specific optimization procedure, making it impossible to assess whether the evaluation is sound.",
+            "The approach lacks novelty. Regularizing the input-gradient norm is a long-established technique (e.g., double backpropagation, Drucker & Le Cun 1991). Applying it to counterfactual generation is a straightforward extension, yet the paper fails to compare with other smoothness-inducing methods (e.g., Jacobian penalty, Lipschitz regularization, adversarial training) that could serve the same purpose.",
+            "The provided manuscript is truncated; essential sections (method details, full experimental setup, results, and discussion) are missing, rendering a complete methodological review impossible.",
+            "The reported results are vague ('2.3 reduction' without units or baseline values; '100% validity' without precise definition) and lack statistical rigor. The claim of 'extensive experiments' is not supported by the visible content."
+          ],
+          "Originality": 2,
+          "Quality": 2,
+          "Clarity": 1,
+          "Significance": 2,
+          "Overall": 3,
+          "Decision": "Reject"
+        },
+        "Experiments": {
+          "Summary": "This paper addresses the contradiction between high accuracy and the need for smooth decision boundaries to enable stable gradient-based counterfactual generation. It proposes augmenting cross-entropy loss with an L2 penalty on the input gradient norm (curvature regularization) during MLP training. The method claims to maintain 100% counterfactual validity while reducing average perturbation distance by 2.3% compared to an unregularized baseline, with negligible accuracy loss. The approach is framed using TRIZ inventive principles and is presented as a lightweight, model-agnostic solution.",
+          "Strengths": [
+            "The core idea of using double-backpropagation-style regularization to encourage locally linear decision surfaces is plausible and elegantly simple.",
+            "The method imposes negligible computational overhead and can be applied to any differentiable model, potentially making it practical if validated."
+          ],
+          "Weaknesses": [
+            "Experiments are conducted on a single, unspecified tabular dataset. No standard benchmarks (e.g., Adult, German Credit, COMPAS) are used, making generalization impossible to assess. Dataset details, preprocessing, train/test splits, and model architecture are missing.",
+            "No comparison to existing counterfactual generation methods (e.g., Wachter, DiCE, MACE, C-CHVAE). The only baselines are an unregularized MLP and a trivial random-noise generator. This fails to demonstrate superiority or even competitiveness with state-of-the-art.",
+            "The evaluation lacks statistical rigor. Results are reported as single-point estimates without error bars, confidence intervals, or multiple random seeds. The claim of 2.3% perturbation reduction cannot be considered reliable without significance testing.",
+            "Hyperparameters of the counterfactual search (Adam learning rate, number of steps, proximity penalty weight) are not justified or ablated. This raises concerns that the search was tuned to favor the proposed method, and robustness of results is unknown.",
+            "Ablations are insufficient. Only two λ values are tested, and there is no analysis of the trade-off between accuracy, perturbation distance, and validity as λ varies. No comparison to alternative smoothness regularizers (e.g., Jacobian norm, weight decay, Lipschitz constraints) is provided."
+          ],
+          "Originality": 2,
+          "Quality": 1,
+          "Clarity": 2,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Literature": {
+          "Summary": "The paper proposes using curvature regularization (penalizing the norm of input gradients) during MLP training to produce models that are both accurate and amenable to gradient-based counterfactual generation. It frames the solution using TRIZ principles. The abstract claims perfect counterfactual validity and reduced perturbation distance with minimal overhead. However, the manuscript is incomplete: it lacks a related work section, citations, experimental details, and results. The text cuts off mid-sentence in the background.",
+          "Strengths": [
+            "The problem statement is clear and the contradiction between accuracy and smoothness is well articulated.",
+            "The proposed method is conceptually simple and intuitive, with a direct explanation of how it addresses the tension."
+          ],
+          "Weaknesses": [
+            "The manuscript is incomplete: no related work section, no experimental setup, no results, and the background section terminates mid-sentence. This prevents a meaningful evaluation of the literature positioning.",
+            "No citations are provided for any referenced prior work (e.g., black-box search, post-hoc optimization, surrogate models, TRIZ) or for the dataset and baselines mentioned. The absence of a reference list makes the paper unsubstantiable.",
+            "The abstract’s quantitative claims (100% validity, 2.3× reduction) are presented without any supporting evidence or details on methodology, dataset, or baseline comparison, constituting an overclaim.",
+            "The mention of TRIZ inventive principles is not explained in a machine learning context, nor are references provided to justify their applicability; this weakens the clarity of the contribution."
+          ],
+          "Originality": 2,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 1,
+          "Overall": 1,
+          "Decision": "Reject"
+        }
+      },
+      "decisions": [
+        {
+          "weakness_id": 1,
+          "weakness_summary": "Core methodological flaw: The regularizer penalizes ||∇_x CE(x, y_true)||², but ",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 2,
+          "weakness_summary": "The problem formulation is incomplete. The paper does not fully define the count",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 3,
+          "weakness_summary": "The approach lacks novelty. Regularizing the input-gradient norm is a long-estab",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 4,
+          "weakness_summary": "The provided manuscript is truncated; essential sections (method details, full e",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 5,
+          "weakness_summary": "The reported results are vague ('2.3 reduction' without units or baseline values",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 6,
+          "weakness_summary": "Experiments are conducted on a single, unspecified tabular dataset. No standard ",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 7,
+          "weakness_summary": "No comparison to existing counterfactual generation methods (e.g., Wachter, DiCE",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 8,
+          "weakness_summary": "The evaluation lacks statistical rigor. Results are reported as single-point est",
+          "accept": false,
+          "reason": "Auto-rejected: requires new experiment/data"
+        },
+        {
+          "weakness_id": 9,
+          "weakness_summary": "Hyperparameters of the counterfactual search (Adam learning rate, number of step",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 10,
+          "weakness_summary": "Ablations are insufficient. Only two λ values are tested, and there is no analys",
+          "accept": false,
+          "reason": "Auto-rejected: requires new experiment/data"
+        },
+        {
+          "weakness_id": 11,
+          "weakness_summary": "The manuscript is incomplete: no related work section, no experimental setup, no",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 12,
+          "weakness_summary": "No citations are provided for any referenced prior work (e.g., black-box search,",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 13,
+          "weakness_summary": "The abstract’s quantitative claims (100% validity, 2.3× reduction) are presented",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 14,
+          "weakness_summary": "The mention of TRIZ inventive principles is not explained in a machine learning ",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        }
+      ],
+      "accepted": 8,
+      "rejected": 2
+    },
+    {
+      "round": 2,
+      "reviews": {
+        "Methodology": {
+          "Summary": "The paper proposes to train MLPs with an input-gradient norm penalty (curvature regularization) to improve gradient-based counterfactual explanation generation. It frames the approach using TRIZ principles and reports preliminary experimental claims (100% validity, 2.3× reduction in perturbation distance). However, the manuscript is incomplete—the background section ends abruptly—and lacks critical details on the method, problem formulation, and experimental setup.",
+          "Strengths": [
+            "The idea of using a gradient penalty to smooth the decision surface for better counterfactual search is intuitive and potentially useful.",
+            "The TRIZ inventive principles are an interesting lens through which to view the regularization strategy."
+          ],
+          "Weaknesses": [
+            "The paper does not provide a formal definition of the curvature regularization term, its connection to local linearity, or how it implements “segmentation” of predictive ability and curvature. The description remains entirely verbal and lacks mathematical justification.",
+            "The problem setting and counterfactual optimization objective are not fully specified. Section 2 breaks off mid-sentence, so the reader never sees the exact loss function or the gradient-based search procedure that the regularization is supposed to improve. This missing information makes it impossible to evaluate the soundness of the method or the validity of the experimental claims.",
+            "The experimental evaluation is not described: no dataset details, no hyperparameters (beyond λ values), no baseline implementations, no metric definitions, and no error bars or statistical testing. The claimed results (e.g., 100% validity) are unsupported and cannot be assessed.",
+            "The argument that penalizing the squared norm of the input gradient resolves the “contradiction” between accuracy and smoothness is asserted without proof. The paper does not discuss potential trade-offs, failure modes, or the theoretical underpinnings (e.g., Lipschitz continuity, curvature bounds) that would ground the method.",
+            "The novelty is hard to gauge because the paper does not compare against established regularization techniques aimed at similar goals, such as adversarial training, Jacobian regularization, or spectral normalization. The significance is overstated given the incomplete presentation."
+          ],
+          "Originality": 2,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 1,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Experiments": {
+          "Summary": "This paper proposes training MLPs with a penalty on the squared norm of the input gradient (curvature regularization) to encourage smooth decision boundaries, aiming to improve gradient-based counterfactual generation. The authors claim that a regularized model achieves 100% counterfactual validity and a 2.3× reduction in average perturbation distance over an unregularized MLP, with negligible accuracy loss, on a single tabular dataset. The approach is framed as resolving a contradiction via TRIZ principles.",
+          "Strengths": [
+            "The core idea of using input-gradient regularization to improve counterfactual search is simple and can be applied to any differentiable model.",
+            "The paper identifies a relevant trade-off between accuracy and local smoothness for explainability."
+          ],
+          "Weaknesses": [
+            "Evaluation is limited to a single, unnamed tabular dataset, providing no evidence of generalization across domains or data types.",
+            "Baselines are insufficient: the only comparisons are an unregularized MLP and a trivial random noise perturbation. No comparison is made with established post-hoc counterfactual generation methods (e.g., Wachter et al., DiCE, FACE) or alternative smoothness-enforcing regularizers (e.g., gradient penalty, Lipschitz regularization). This makes the claimed improvements uninformative.",
+            "Hyperparameter choices (regularization strength λ, counterfactual search parameters) are not justified; no sensitivity analysis is provided, leaving it unclear whether results are robust or cherry-picked.",
+            "No measures of statistical significance (confidence intervals, standard deviations) are reported for the perturbation distance reduction; the magnitude of improvement is ambiguous ('2.3 reduction' without specifying percent or factor), casting doubt on practical relevance.",
+            "Critical ablations are missing: impact of λ variation, effect of model capacity, trade-off between accuracy and perturbation distance across a full range, and alternative explanations (e.g., weight norm shrinkage) are not explored."
+          ],
+          "Originality": 2,
+          "Quality": 1,
+          "Clarity": 2,
+          "Significance": 2,
+          "Overall": 3,
+          "Decision": "Reject"
+        },
+        "Literature": {
+          "Summary": "The paper proposes to train MLPs with a curvature regularization term—the squared L2 norm of the gradient of the cross-entropy loss with respect to the input—to improve gradient-based counterfactual generation. It claims to resolve a contradiction between accuracy and smoothness using TRIZ principles. The manuscript is incomplete, with a truncated background section, no proper citations, and vague experimental claims.",
+          "Strengths": [
+            "The core idea of adding an input-gradient penalty during training to improve counterfactual search is simple and computationally cheap.",
+            "The paper attempts to address a relevant practical problem: making counterfactual generation more stable and efficient."
+          ],
+          "Weaknesses": [
+            "The background section is abruptly cut off mid-sentence, leaving the problem formulation incomplete. Essential details such as the dataset name, size, preprocessing, exact counterfactual search hyperparameters, and the metric definitions are missing, making the paper unreproducible and unassessable.",
+            "Related work coverage is virtually nonexistent. Only one incomplete in-text citation ('Wachter et al., 2017') is given with no corresponding reference in a bibliography. There is no discussion of prior counterfactual-generation methods (e.g., DiCE, growing spheres, recourse methods) or existing curvature/smoothness penalties (e.g., double backpropagation, adversarial training, WGAN-GP, Lipschitz regularization). This omission prevents any evaluation of novelty or fair comparison.",
+            "Numerous statements are vague, unsupported, or overclaimed. For example: '100% counterfactual validity' is meaningless without baseline comparison (what does 'equal to the unregularized model' prove?); the '2.3 reduction' lacks units and baseline absolute values; 'random Gaussian-noise baseline' is not a meaningful counterfactual baseline and its setup is not described; TRIZ principles are introduced without explanation or justification, and their relevance to ML is not established. These issues render the argument unclear.",
+            "The writing quality is substandard. Sentences are often convoluted (e.g., the abstract's opening), there are grammatical errors, and the integration of TRIZ jargon feels forced and adds confusion rather than clarity. The overall narrative is disjointed."
+          ],
+          "Originality": 1,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 1,
+          "Overall": 1,
+          "Decision": "Reject"
+        }
+      },
+      "decisions": [
+        {
+          "weakness_id": 1,
+          "weakness_summary": "The paper does not provide a formal definition of the curvature regularization t",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 2,
+          "weakness_summary": "The problem setting and counterfactual optimization objective are not fully spec",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 3,
+          "weakness_summary": "The experimental evaluation is not described: no dataset details, no hyperparame",
+          "accept": false,
+          "reason": "Auto-rejected: requires new experiment/data"
+        },
+        {
+          "weakness_id": 4,
+          "weakness_summary": "The argument that penalizing the squared norm of the input gradient resolves the",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 5,
+          "weakness_summary": "The novelty is hard to gauge because the paper does not compare against establis",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 6,
+          "weakness_summary": "Evaluation is limited to a single, unnamed tabular dataset, providing no evidenc",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 7,
+          "weakness_summary": "Baselines are insufficient: the only comparisons are an unregularized MLP and a ",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 8,
+          "weakness_summary": "Hyperparameter choices (regularization strength λ, counterfactual search paramet",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 9,
+          "weakness_summary": "No measures of statistical significance (confidence intervals, standard deviatio",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 10,
+          "weakness_summary": "Critical ablations are missing: impact of λ variation, effect of model capacity,",
+          "accept": false,
+          "reason": "Auto-rejected: requires new experiment/data"
+        },
+        {
+          "weakness_id": 11,
+          "weakness_summary": "The background section is abruptly cut off mid-sentence, leaving the problem for",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 12,
+          "weakness_summary": "Related work coverage is virtually nonexistent. Only one incomplete in-text cita",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 13,
+          "weakness_summary": "Numerous statements are vague, unsupported, or overclaimed. For example: '100% c",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        },
+        {
+          "weakness_id": 14,
+          "weakness_summary": "The writing quality is substandard. Sentences are often convoluted (e.g., the ab",
+          "accept": true,
+          "reason": "Auto-accepted: text-level fix likely possible"
+        }
+      ],
+      "accepted": 8,
+      "rejected": 2
+    }
+  ]
+}

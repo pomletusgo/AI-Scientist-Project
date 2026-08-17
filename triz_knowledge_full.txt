@@ -1,0 +1,802 @@
+================================================================================
+OFFICIAL TRIZ KNOWLEDGE BASE — Theory of Inventive Problem Solving
+Based on Genrich Altshuller's original works (1946–1985)
+Analysis of 2,000,000+ patents → universal innovation patterns
+================================================================================
+
+SOURCE: Altshuller, G. (1984). "Creativity as an Exact Science."
+        Altshuller, G. (1999). "The Innovation Algorithm: TRIZ, Systematic
+        Innovation and Technical Creativity." Technical Innovation Center.
+        Altshuller, G. (2002). "40 Principles: TRIZ Keys to Innovation."
+        TRIZ Journal Archives (https://the-trizjournal.com).
+        MATRIZ Official (https://wiki.matriz.org).
+
+================================================================================
+PART 1: THE 40 INVENTIVE PRINCIPLES (Complete with Sub-Principles)
+================================================================================
+
+Principle 1. SEGMENTATION
+  1a. Divide an object into independent parts.
+      Example: modular furniture, split air conditioner, multi-barrel cannons
+  1b. Make an object easy to disassemble/assemble.
+      Example: modular audio systems, combination machine tools
+  1c. Increase the degree of fragmentation.
+      Example: Venetian blinds, multi-bin recycling, nanomaterials
+  ML Application: Mixture-of-Experts (separate expert modules), model sharding,
+  modular neural networks, independent feature extractors
+
+Principle 2. EXTRACTION (TAKING OUT)
+  2a. Extract the harmful part and place it in the super-system.
+      Example: move noisy compressor outdoors (split AC)
+  2b. Extract the part negatively affected by the system.
+      Example: external car antenna, towed sonar array
+  2c. Extract only the necessary/useful part.
+      Example: contact lenses from glasses, sole-only slippers
+  2d. Remove the most important part to create a new mechanism.
+      Example: LED = bulb without filament; digital camera = camera without film;
+      electric vehicle = car without combustion engine
+  ML Application: Knowledge distillation (extract only essential knowledge from a
+  large model), feature selection, pruning (remove unnecessary weights), adapter
+  modules (extract task-specific knowledge)
+
+Principle 3. LOCAL QUALITY
+  3a. Change uniform structure to non-uniform.
+      Example: weighted badminton racket head, surface hardening
+  3b. Let different parts perform different functions.
+      Example: Swiss Army knife, claw hammer
+  3c. Place each part in conditions best suited for its operation.
+      Example: refrigerator with separate fridge (5C) and freezer (-18C)
+  ML Application: Attention mechanisms (different weights for different inputs),
+  localized loss functions, per-layer learning rates, heterogeneous GNNs
+
+Principle 4. ASYMMETRY
+  4a. Change symmetrical to asymmetrical.
+      Example: asymmetrical umbrella, USB plug asymmetry
+  4b. If already asymmetrical, increase the degree of asymmetry.
+      Example: asymmetrical fan, polarized plugs
+  ML Application: Asymmetric neural architectures (encoder deeper than decoder),
+  asymmetric loss functions (focal loss penalizes minority class more), class-
+  weighted sampling, asymmetric attention patterns
+
+Principle 5. MERGING / COMBINING
+  5a. Combine identical/similar objects in space.
+      Example: tandem bicycle, herringbone gears, solar-wind hybrid
+  5b. Combine identical/similar operations in time.
+      Example: hot/cold water mixing valve, camcorder
+  5c. Heterogeneous combination — combine different types of objects.
+      Example: CT = X-ray + computer, mechatronics
+  5d. Subject-additive combination — add small thing to larger main object.
+      Example: flash on camera, remote control on TV
+  ML Application: Multi-task learning, ensemble methods (stacking, bagging,
+  boosting), model fusion, hybrid architectures (CNN+Transformer, dense+sparse),
+  multi-modal models (vision+language)
+
+Principle 6. UNIVERSALITY / MULTI-FUNCTIONALITY
+  6a. Make an object perform multiple functions, eliminating other objects.
+      Example: multimeter, smartphone (camera + phone + browser + GPS)
+  ML Application: Foundation models (one model for many tasks), universal
+  embeddings, multi-head architectures, general-purpose agents
+
+Principle 7. NESTING (MATRYOSHKA)
+  7a. Place one object inside another successively.
+      Example: telescoping cup, retractable sword, nesting dolls
+  7b. One part can retract into the cavity of another.
+      Example: retractable utility knife, seatbelt retractor, drawers
+  ML Application: Residual connections (nested skip connections), hierarchical
+  representations (word→sentence→document), nested model architectures, recursive
+  neural networks, hierarchical attention
+
+Principle 8. ANTI-WEIGHT / WEIGHT COMPENSATION
+  8a. Merge with an object providing lifting force.
+      Example: helium balloons for signs, salvage floats
+  8b. Balance weight via medium (aerodynamic, hydrodynamic, spring force).
+      Example: hydraulic jacks, leaf springs, hovercraft
+  ML Application: Gradient clipping (compensate for exploding gradients),
+  batch normalization (compensate for internal covariate shift), residual
+  connections (compensate for vanishing gradients), learning rate warmup
+
+Principle 9. PRELIMINARY ANTI-ACTION
+  9a. Apply anti-action in advance to counteract harmful effects.
+      Example: expansion gaps in railway tracks, spring-loaded tape measure
+  9b. If object will be in tension, pre-apply compression.
+      Example: pre-stressed reinforced concrete
+  ML Application: Data augmentation as pre-normalization, pre-training to avoid
+  poor initialization, adversarial training (pre-expose model to attacks),
+  gradient pre-conditioning
+
+Principle 10. PRELIMINARY ACTION
+  10a. Perform required changes fully or partially in advance.
+      Example: pre-perforated stamps, pre-glued peel-and-stick labels
+  10b. Pre-arrange objects at convenient locations for timely use.
+      Example: emergency lights, pre-installed fire hydrants
+  ML Application: Pre-training / transfer learning, pre-computed embeddings,
+  caching intermediate results, feature pre-computation, model warm-up
+
+Principle 11. BEFOREHAND CUSHIONING / PRIOR PROTECTION
+  11a. Prepare emergency measures in advance for low-reliability objects.
+      Example: bumpers on cars, fuses, spare tires, reserve parachutes
+  ML Application: Checkpointing, early stopping, model rollback, fallback
+  models, redundancy in critical systems, graceful degradation
+
+Principle 12. EQUIPOTENTIALITY
+  12a. In a potential field, eliminate the need to raise/lower objects by
+      changing working conditions to a level height.
+      Example: repair pit instead of lifting car, ship locks, escalators
+  ML Application: Zero-centering / normalization of input features, batch
+  normalization (equalize layer inputs), learning rate equalization across
+  layers, balanced data sampling
+
+Principle 13. INVERSION (THE OTHER WAY ROUND)
+  13a. Use opposite action to create new concepts.
+      Example: bulldozer pushes instead of pulls; Faraday generator reverses
+      Ørsted's discovery
+  13b. Make moving parts fixed and fixed parts moving.
+      Example: treadmill — belt moves, person stays; counter-current pool
+  13c. Turn object inside-out or upside-down.
+      Example: reversible clothing, safari park (humans caged in vehicles)
+  ML Application: GANs (generator and discriminator invert each other), inverse
+  reinforcement learning, generate-then-verify instead of search-then-match,
+  self-supervised learning (predict masked tokens instead of next word)
+
+Principle 14. SPHEROIDALITY / CURVATURE
+  14a. Use curvilinear parts instead of rectilinear; spherical instead of flat.
+      Example: arches and domes in architecture
+  14b. Use rollers, balls, spirals, domes.
+      Example: ballpoint pens, spherical casters for furniture
+  14c. Change from linear to rotary motion; use centrifugal forces.
+      Example: computer mouse trackball, spin-drying
+  ML Application: Circular/curved decision boundaries, kernel methods (RBF),
+  geodesic distance in manifold learning, circular convolutions
+
+Principle 15. DYNAMICITY
+  15a. Allow characteristics to adjust for optimal performance.
+      Example: adjustable steering wheel, seat, mirrors
+  15b. Divide object into parts capable of relative movement.
+      Example: foldable keyboard, butterfly keyboard
+  15c. Make rigid/inflexible objects movable or adaptive.
+      Example: flexible borescope, variable-geometry turbochargers
+  ML Application: Adaptive learning rates, dynamic architectures (conditional
+  computation), learnable data augmentation, adaptive dropout, dynamic routing
+  in capsule networks, online learning
+
+Principle 16. PARTIAL OR EXCESSIVE ACTION
+  16a. If 100% is difficult, use slightly less or slightly more to simplify.
+      Example: overspray painting then remove excess; ABS braking
+  ML Application: Over-parameterization then pruning, train on subset then
+  fine-tune, curriculum learning (start easy, increase difficulty), warm-start
+  from simplified problem
+
+Principle 17. ANOTHER DIMENSION (DIMENSIONALITY CHANGE)
+  17a. Move in 2D or 3D space.
+      Example: 5-axis cutting tool, 3D mouse
+  17b. Multi-story/multi-layer instead of single-layer.
+      Example: multi-story parking, double-sided circuit boards
+  17c. Tilt or re-orient the object.
+      Example: dump truck
+  17d. Use the other side of a given area.
+      Example: stacked microelectronic hybrid circuits
+  ML Application: Multi-scale representations, 2D convolutions for images,
+  multi-head attention (parallel dimensions), depthwise separable convolutions,
+  positional encodings (moving from 1D to higher dimensions)
+
+Principle 18. MECHANICAL VIBRATION
+  18a. Cause object to oscillate/vibrate.
+  18b. Increase frequency up to ultrasonic.
+      Example: ultrasonic cleaning, ultrasonic fuel injection
+  18c. Use resonant frequency.
+      Example: tuned intake/exhaust manifolds
+  18d. Use piezoelectric vibrators instead of mechanical.
+  18e. Combine ultrasonic with electromagnetic field oscillations.
+  ML Application: Learning rate oscillation (cosine annealing with restarts),
+  cyclical learning rates, stochastic gradient noise as beneficial vibration,
+  dropout as random perturbation, weight noise for regularization
+
+Principle 19. PERIODIC ACTION
+  19a. Use periodic/pulsating instead of continuous action.
+      Example: pulse-driven fuel pump, CPR
+  19b. Change periodic magnitude or frequency.
+      Example: variable-rate flashing warning lights
+  19c. Use pauses between impulses for a different action.
+      Example: pumped-storage hydro (pump at night, generate by day)
+  ML Application: Cosine annealing learning rate schedules, periodic evaluation,
+  alternating training (GAN discriminator/generator), cyclical curriculum
+  learning, intermittent fine-tuning
+
+Principle 20. CONTINUITY OF USEFUL ACTION
+  20a. All parts work at full load continuously.
+      Example: hybrid vehicles — engine at peak efficiency
+  20b. Eliminate all idle or intermittent actions.
+      Example: flywheel energy storage, printing during carriage return
+  ML Application: Pipeline parallelism, streaming inference, continuous
+  learning (no fixed train/deploy boundary), online training, async SGD
+
+Principle 21. SKIPPING / RUSHING THROUGH
+  21a. Conduct harmful/hazardous operations at high speed.
+      Example: high-speed dental drill, cutting at high speed before deformation
+  ML Application: Fast initial training with large learning rate, one-cycle
+  policy, rapid prototyping with small models, speed-up sensitive operations
+
+Principle 22. BLESSING IN DISGUISE / TURN HARM INTO BENEFIT
+  22a. Use harmful factors to achieve positive effects.
+      Example: waste heat for cabin heating, methane from wastewater for power
+  22b. Eliminate one harmful action by adding another.
+      Example: buffer added to corrosive solution
+  22c. Amplify a harmful factor until it is no longer harmful.
+      Example: backfire to eliminate forest fire fuel
+  ML Application: Adversarial examples for robust training, noise injection for
+  regularization (denoising autoencoders), using bias as a feature, overfitting
+  as early stopping signal, mode collapse in GANs as diversity signal
+
+Principle 23. FEEDBACK
+  23a. Introduce feedback to improve process/action.
+      Example: closed-loop fuel injection, thermostat, autopilot
+  23b. If feedback exists, change its magnitude or influence.
+      Example: change autopilot sensitivity near airports
+  ML Application: Validation-based early stopping, learning rate reduction on
+  plateau, model-based RL (environment feedback), human-in-the-loop, active
+  learning (model queries for labels it's uncertain about)
+
+Principle 24. INTERMEDIARY
+  24a. Use intermediary carrier/process.
+      Example: carpenter's nail set, electrical relay, wall plug/Rawlplug
+  24b. Temporarily merge object with another easily removable one.
+      Example: pot holder for hot dishes
+  ML Application: Multi-agent systems (agents as intermediaries), adapter
+  modules, proxy models, feature transforms, bottleneck layers, mediator
+  architectures
+
+Principle 25. SELF-SERVICE
+  25a. Object serves itself (auxiliary functions, self-tuning, self-repair).
+      Example: recuperative gas turbine, self-sealing tires
+  25b. Use waste resources, energy, or substances.
+      Example: vehicle idle energy to charge hybrid batteries
+  ML Application: Self-supervised learning, automated ML (AutoML), self-
+  healing systems, automated hyperparameter tuning, bootstrapping, self-
+  training, pseudo-labeling
+
+Principle 26. COPYING
+  26a. Use simpler, cheaper copies instead of unavailable/expensive originals.
+      Example: CAE virtual simulation instead of prototype testing
+  26b. Replace objects with optical copies/images.
+      Example: holograms, photographs for measurement
+  26c. Use infrared or ultraviolet copies.
+  ML Application: Knowledge distillation (student copies teacher), synthetic
+  data generation, model compression, quantization, simulation-based training,
+  digital twins, data augmentation as copying with variation
+
+Principle 27. CHEAP SHORT-LIVED OBJECTS
+  27a. Replace expensive object with multiple inexpensive, short-lived ones.
+      Example: disposable paper cups instead of ceramic
+  ML Application: Lightweight models for edge deployment, disposable training
+  runs for hyperparameter search, ephemeral compute for inference, model
+  snapshot ensembles
+
+Principle 28. SUBSTITUTION FOR MECHANICAL MEANS
+  28a. Replace mechanical with sensory (optical, acoustic, taste, smell).
+  28b. Use electric, magnetic, and electromagnetic fields to interact.
+  28c. Change from static to movable fields; unstructured to structured fields.
+  28d. Use fields with field-activated particles (e.g., ferromagnetic).
+  ML Application: Replace rule-based systems with learned neural functions,
+  replace manual feature engineering with representation learning, replace
+  hard-coded logic with differentiable programs, neural architecture search
+
+Principle 29. PNEUMATICS AND HYDRAULICS
+  29a. Use gas/liquid parts instead of solid.
+      Example: inflatable structures, air cushion, hydraulic systems
+  ML Application: Soft attention vs hard attention, continuous relaxation of
+  discrete operations (Gumbel-softmax, straight-through estimator), soft-
+  assignment in clustering
+
+Principle 30. FLEXIBLE SHELLS AND THIN FILMS
+  30a. Replace heavy 3D structures with flexible shells/thin films.
+      Example: geodesic domes, inflatable structures
+  30b. Isolate object from environment using flexible shells/thin films.
+      Example: shrink-wrap packaging, protective films, bubble wrap
+  ML Application: Lightweight model wrappers, adapter layers (thin shells
+  around frozen models), parameter-efficient fine-tuning (LoRA, prefix tuning)
+
+Principle 31. POROUS MATERIALS
+  31a. Make object porous.
+      Example: porous filters, aerated concrete, foam materials
+  31b. Use porous coatings or inserts.
+  31c. If already porous, fill pores with useful substance.
+      Example: oil-impregnated sintered bearings, drug-eluting stents
+  ML Application: Sparse neural networks (porous weight matrices), dropout
+  (temporary "holes" in the network), sparse attention, model sparsity,
+  grafting (fill sparse network with new capabilities)
+
+Principle 32. CHANGING COLOR / OPTICAL PROPERTIES
+  32a. Change color of object or environment.
+      Example: camouflage, color-changing indicators
+  32b. Change transparency.
+      Example: photochromic lenses, electrochromic smart glass
+  ML Application: Model interpretability (changing representation to reveal
+  patterns), attention visualization, feature importance coloring, t-SNE/UMAP
+  visualization (color by class), saliency maps
+
+Principle 33. HOMOGENEITY
+  33a. Make interacting objects from the same material or material with
+      identical properties.
+      Example: diamond cutting diamond, same-material bearings for thermal match
+  ML Application: Siamese networks (identical twin architectures), shared
+  weights, contrastive learning (same architecture for both branches),
+  homogeneous graph neural networks
+
+Principle 34. DISCARDING AND RECOVERING
+  34a. Eliminate parts that have completed their function (dissolve, evaporate).
+      Example: dissolvable sutures, water-soluble packaging, ablative heat shields
+  34b. Restore consumable parts during operation.
+      Example: self-sharpening blades, regenerating catalytic converters
+  ML Application: Pruning (remove completed/useless weights), dynamic layer
+  removal, early-exit networks (discard remaining layers when confident),
+  weight recycling, progressive network growing then pruning
+
+Principle 35. CHANGE OF PHYSICAL/CHEMICAL PARAMETERS
+  35a. Change aggregate state (gas, liquid, solid).
+  35b. Change concentration or composition.
+  35c. Change degree of flexibility.
+  35d. Change temperature.
+  ML Application: Temperature scaling in softmax, learning rate schedules,
+  changing model precision (FP32→FP16→INT8), changing dropout rates, annealing
+  schedules, changing embedding dimensions
+
+Principle 36. PHASE TRANSITIONS
+  36a. Use phenomena during phase transitions: volume change, heat absorption/
+      release, etc.
+      Example: heat pipes, steam engines, phase-change thermal storage
+  ML Application: Phase transitions in learning (grokking), critical learning
+  periods, loss landscape phase changes, emergence phenomena in large models,
+  sharp transitions in model capability
+
+Principle 37. THERMAL EXPANSION
+  37a. Use thermal expansion or contraction of materials.
+      Example: bimetallic strip thermostats, shrink-fit assembly
+  37b. Use multiple materials with different coefficients of thermal expansion.
+      Example: bimetallic strips in circuit breakers
+  ML Application: Model capacity expansion (gradually increase layers/width),
+  progressive network growing, embedding dimension expansion during training,
+  staged training (expand model step by step)
+
+Principle 38. STRONG OXIDIZERS
+  38a. Replace regular air with oxygen-enriched air.
+  38b. Replace enriched air with pure oxygen.
+  38c. Ionize air or oxygen.
+  38d. Use ozonized oxygen.
+  38e. Use ozone.
+  ML Application: "Enriched" training (higher quality/larger datasets), pure
+  optimization signals, stronger regularization, amplified gradients for rare
+  classes, intensified training signals for hard examples (focal loss)
+
+Principle 39. INERT ATMOSPHERE
+  39a. Use inert gases instead of normal ones.
+      Example: argon welding shield gas, nitrogen food packaging
+  39b. Add neutral parts or inert additives.
+      Example: inert fillers in plastics, buffer solutions
+  ML Application: Neutral/placebo baselines, controlled experimental conditions,
+  ablation studies, adding noise for stability, gradient noise for robustness,
+  neutral data augmentation (label-preserving transforms only)
+
+Principle 40. COMPOSITE MATERIALS
+  40a. Use composite materials instead of homogeneous ones.
+      Example: carbon fiber reinforced polymers, fiberglass, reinforced concrete,
+      metal matrix composites, plywood, laminated glass
+  ML Application: Hybrid architectures (CNN+Transformer, dense+sparse layers),
+  ensemble diversity (different model types combined), multi-branch networks,
+  concatenated features from different modalities, mixture of heterogeneous
+  experts, stacking different model families
+
+================================================================================
+PART 2: THE 39 ENGINEERING PARAMETERS (Contradiction Matrix)
+================================================================================
+
+The Altshuller Contradiction Matrix is a 39×39 table. ROWS = parameter to
+IMPROVE, COLUMNS = parameter that WORSENS. Each cell contains 2-4 Principle
+numbers that most frequently resolve that specific contradiction.
+
+Physical/Geometric Parameters (1-12, 17-18, 21):
+  1.  Weight of moving object
+  2.  Weight of stationary object
+  3.  Length of moving object
+  4.  Length of stationary object
+  5.  Area of moving object
+  6.  Area of stationary object
+  7.  Volume of moving object
+  8.  Volume of stationary object
+  9.  Speed
+  10. Force
+  11. Stress or pressure
+  12. Shape
+  17. Temperature
+  18. Illumination intensity
+  21. Power
+
+Quality/Functional Parameters (13-16, 27-29, 32-35, 38-39):
+  13. Stability of the object's composition
+  14. Strength
+  15. Duration of action by a moving object
+  16. Duration of action by a stationary object
+  27. Reliability
+  28. Measurement accuracy
+  29. Manufacturing precision
+  32. Ease of manufacture
+  33. Ease of operation
+  34. Ease of repair
+  35. Adaptability or versatility
+  38. Extent of automation
+  39. Productivity
+
+Negative/Undesirable Parameters (19-20, 22-26, 30-31, 36-37):
+  19. Use of energy by moving object  (energy consumption)
+  20. Use of energy by stationary object
+  22. Loss of Energy  (energy waste)
+  23. Loss of substance  (material waste)
+  24. Loss of Information  (data/information loss)
+  25. Loss of Time  (time waste, latency)
+  26. Quantity of substance/the matter
+  30. External harm affects the object  (harmful factors acting ON object)
+  31. Object-generated harmful factors  (harmful side effects FROM object)
+  36. Device complexity
+  37. Difficulty of detecting and measuring
+
+HOW TO USE THE MATRIX FOR ML/AI:
+  1. Identify what you want to IMPROVE (rows). Example: "Accuracy" → map to
+     Parameter 28 (Measurement accuracy) or 39 (Productivity)
+  2. Identify what gets WORSE as a result (columns). Example: "Training time"
+     → map to Parameter 25 (Loss of Time) or "Model size" → Parameter 26
+  3. Locate the intersecting cell → 2-4 recommended Principles
+  4. Apply those Principles to generate innovative solution concepts
+
+COMMON ML CORRESPONDENCES:
+  Accuracy/Performance → Parameter 28 (Measurement accuracy) or 39 (Productivity)
+  Training Speed → Parameter 9 (Speed) or 25 (Loss of Time)
+  Model Size/Parameters → Parameter 26 (Quantity of substance)
+  Inference Latency → Parameter 25 (Loss of Time)
+  Overfitting → Parameter 13 (Stability) problem
+  Robustness → Parameter 27 (Reliability) or 14 (Strength)
+  Generalization → Parameter 35 (Adaptability)
+  Computational Cost → Parameter 19/20 (Use of energy)
+  Model Complexity → Parameter 36 (Device complexity)
+
+Full interactive matrix available at: https://www.triz40.com
+GitHub interactive: https://joriewong.github.io/Altshuler-Matrix/
+
+================================================================================
+PART 3: THE 76 STANDARD SOLUTIONS (Su-Field Analysis)
+================================================================================
+
+CLASS 1: BUILDING AND DESTRUCTION OF SU-FIELDS (13 solutions)
+
+  Sub-class 1.1: Building Su-Fields (Incomplete Models) — 8 solutions
+    1.1.1 Complete the Su-Field (add missing S2 or F where function is absent)
+    1.1.2 Introduce an internal additive (temporary or permanent into S1)
+    1.1.3 Introduce an external additive (into the external environment)
+    1.1.4 Use the external environment as a substance
+    1.1.5 Change the environment of the system
+    1.1.6 Control small quantities by applying and removing a surplus
+    1.1.7 Use an intermediary object to make actions possible
+    1.1.8.1 Use a shielding substance when a strong field must be blocked
+    1.1.8.2 Use a reactive substance when a weak field needs strong local effect
+
+  Sub-class 1.2: Destruction of Su-Fields (Harmful Effects) — 5 solutions
+    1.2.1 Introduce a third substance (S3) between S1 and S2
+    1.2.2 Eliminate harmful effects by introducing a modification of S1 or S2
+    1.2.3 Introduce a substance that is a modification of one of the given substances
+    1.2.4 Introduce a sacrificial/alternative substance
+    1.2.5 Introduce a field that counteracts the harmful field
+
+CLASS 2: DEVELOPMENT OF SU-FIELDS (23 solutions)
+
+  Sub-class 2.1: Transition to Complex Su-Field Models
+    2.1.1 Chain Su-Fields (create a chain: S1—F1—S2—F2—S3)
+    2.1.2 Combine Su-Fields into a double Su-Field (parallel processing)
+
+  Sub-class 2.2: Forcing Su-Field Models
+    2.2.1 Replace a poorly controlled field with a more easily controlled field
+    2.2.2 Divide the element into smaller units; use particles instead of whole
+    2.2.3 Use porous or capillary materials
+    2.2.4 Make the system flexible; divide into parts and link them
+    2.2.5 Replace an uncontrolled field with a structured one (periodic/patterned)
+    2.2.6 Change from a uniform structure to a situation-specific structure
+
+  Sub-class 2.3: Controlling Frequency (Matching/Mismatching Natural Frequencies)
+    2.3.1 Match/mismatch the natural frequencies of field with substance
+    2.3.2 Use frequencies to create or eliminate resonance
+    2.3.3 Do one operation during the downtime of another (continuity of action)
+
+  Sub-class 2.4: Integration of Ferromagnetic Materials and Magnetic Fields
+    2.4.1 Use ferromagnetism and ferromagnetic materials
+    2.4.2 Replace a substance with a ferromagnetic one
+    2.4.3 Use magnetic fluids ("nothing" to simulate structures)
+    2.4.4 Use capillary or porous structures in magnetic materials
+    2.4.5 Introduce a ferromagnetic additive (temporarily)
+    2.4.6 Introduce magnetic materials into the environment instead of object
+    2.4.7 Use the physical effects of magnetic transitions
+    2.4.8 Use dynamic magnetic fields
+    2.4.9 Create structures by using magnetic particles
+    2.4.10 Use vibration in conjunction with magnetic fields / resonance
+    2.4.11 Use electric current instead of magnetic particles
+    2.4.12 Use rheological liquids (electro/magneto-rheological)
+
+CLASS 3: SYSTEM TRANSITIONS (6 solutions)
+
+  Sub-class 3.1: Transition to Bi- and Poly-Systems
+    3.1.1 Combine multiple systems into a bi- or poly-system (ensemble effect)
+    3.1.2 Develop bi- and poly-systems (increase different characteristics)
+    3.1.3 Increase the degree of difference between elements in bi-/poly-systems
+    3.1.4 Simplify bi- and poly-systems (consolidate after expansion)
+    3.1.5 Transition between parts and the whole of bi-/poly-systems
+
+  Sub-class 3.2: Transition to the Micro-Level
+    3.2.1 Transition to the micro-level (use microstructure instead of whole)
+
+CLASS 4: DETECTION AND MEASUREMENT (17 solutions)
+
+  Sub-class 4.1: Indirect Methods
+    4.1.1 Control/measure a system by using a phase transition
+    4.1.2 Measure a copy instead of the original
+    4.1.3 Use detection instead of measurement (binary is simpler)
+
+  Sub-class 4.2: Creating Detectable/Measurable Su-Fields
+    Create fields that can be detected/measured; introduce easily detectable
+    additives to make otherwise invisible properties observable
+
+  Sub-class 4.3: Measurement Enhancement
+    4.3.1 Measure the system by means of natural phenomena (resonance, etc.)
+    4.3.2 Measure changes in a system by changes in its resonant frequency
+
+CLASS 5: STRATEGIES FOR SIMPLIFICATION & IMPROVEMENT (17 solutions)
+
+  Sub-class 5.1: Introduction of Substances and Fields
+    5.1.1.1 Add "nothing" — use foam, honeycomb, voids, hollow structures
+    5.1.1.2 Use a field instead of a substance
+    5.1.1.3 The additive disappears after use (self-discarding)
+    5.1.1.4 Use small amounts of very active additives
+    5.1.1.5 Apply an additive locally/concentrated
+    5.1.1.6 Introduce an additive temporarily
+    5.1.1.7 Apply additives to a copy instead of the original
+    5.1.2 Divide elements into smaller units (segmentation)
+    5.1.3 Make the additive disappear after use (discard/recover)
+    5.1.4 Simulate the introduction of more substance than is acceptable
+
+  Sub-class 5.2: Use of Fields — creative use and combination of fields
+
+  Sub-class 5.3: Phase Transitions
+    5.3.1 Use phase change (change of aggregate state)
+    5.3.2 Use accompanying effects from phase changes (volume, heat)
+    5.3.4-5 Use multiple phase transitions, especially dual-phase effects
+
+  Sub-class 5.4: Self-Controlled Systems
+    5.4.1 Self-controlled changes (feedback-based adaptive systems)
+    5.4.2 Use natural oscillation or self-oscillation
+
+  Sub-class 5.5: Chemical Methods
+    5.5.1 Getting needed ions, molecules through chemical reactions
+    5.5.2 Use of strong oxidants
+    5.5.3 Use of inert atmospheres
+
+================================================================================
+PART 4: LAWS OF TECHNICAL SYSTEM EVOLUTION
+================================================================================
+
+Law 1: SYSTEMS EVOLVE TOWARD INCREASING IDEALITY
+  Ideality = Σ(Benefits) / (Σ(Costs) + Σ(Harm))
+  Every system evolves to deliver MORE function with FEWER resources and
+  LESS harm. The Ideal Final Result (IFR) is: "The function is performed
+  without the system existing."
+  ML Application: Smaller models achieving same accuracy; training with less
+  data; zero-shot capabilities; compute-optimal training
+
+Law 2: UNEVEN DEVELOPMENT OF SUBSYSTEMS
+  Different subsystems evolve at different rates. The subsystem that lags
+  furthest behind creates a CONTRADICTION that drives the next innovation.
+  ML Application: Identify the bottleneck subsystem (data pipeline, model
+  architecture, optimizer, hardware) — the bottleneck defines the next
+  research opportunity
+
+Law 3: TRANSITION TO HIGHER-LEVEL SYSTEMS
+  Component → System → Supersystem → Ecosystem
+  ML Application: Single layer → block → model → ensemble → model ecosystem
+  (e.g., individual model → MoE → federated learning → model marketplace)
+
+Law 4: INCREASING DYNAMISM AND CONTROLLABILITY
+  Rigid → hinged → flexible → adaptive → self-organizing
+  ML Application: Fixed architecture → conditional computation → dynamic
+  routing → neural architecture search → self-modifying code
+
+Law 5: TRANSITION FROM MACRO TO MICRO LEVEL
+  Mechanical → thermal → chemical → electronic → electromagnetic → quantum
+  ML Application: Manual features → learned embeddings → fine-grained tokens;
+  coarse classification → fine-grained recognition → pixel-level segmentation
+
+Law 6: TRANSITION TO SHORTENED ENERGY FLOW PATH
+  Direct energy transfer becomes more efficient
+  ML Application: Skip connections, dense connectivity, direct gradient paths
+
+Law 7: INCREASING COORDINATION/MATCHING OF RHYTHMS
+  Systems evolve to match natural frequencies and rhythms
+  ML Application: Learning rate scheduling matching loss landscape, batch
+  size synchronizing with gradient noise scale
+
+Law 8: COMPLETE SYSTEM → INCREASED COMPLETENESS
+  Engine → transmission → working unit → control system
+  ML Application: Model → training pipeline → evaluation → automated monitoring
+  → self-improving feedback loop
+
+================================================================================
+PART 5: SUBSTANCE-FIELD (Su-Field) ANALYSIS
+================================================================================
+
+A Su-Field model represents any technical system as a TRIAD:
+  S1 = Object/recipient (what is being acted upon)
+  S2 = Tool/actor (what acts upon S1)
+  F  = Field/energy (the interaction between S1 and S2)
+
+FIELDS (F) can be:
+  Mechanical (Me) — pressure, friction, vibration
+  Thermal (Th) — heating, cooling
+  Chemical (Ch) — reactions, catalysis
+  Electrical (E) — current, voltage, static
+  Magnetic (M) — attraction, repulsion, induction
+  Acoustic (A) — sound, ultrasound
+  Electromagnetic (EM) — radio, light, microwave
+  Gravitational (G) — weight, buoyancy
+  Biological (B) — enzymes, fermentation
+  Information (I) — data, signals, patterns
+
+FOUR BASIC Su-Field MODEL TYPES:
+  1. Effective complete system — desired function works correctly
+  2. Incomplete system — S1, S2, or F is MISSING → addressed by Class 1.1
+  3. Harmful complete system — negative effect occurs → addressed by Class 1.2
+  4. Ineffective complete system — effect insufficient → addressed by Class 2
+
+ML Su-Field Mapping:
+  S1 = Input data (the object being processed)
+  F  = Model/Algorithm (the field that transforms)
+  S2 = Output predictions (the result)
+
+  Missing S2 → Add prediction head or output layer (1.1.1)
+  Harmful F → Add regularization or constraint to model (1.2.2)
+  Ineffective F → Improve model architecture or training (Class 2)
+
+================================================================================
+PART 6: THE ARIZ ALGORITHM
+================================================================================
+
+ARIZ (Algorithm for Inventive Problem Solving) — the most powerful TRIZ tool
+for complex problems. Nine parts, applied sequentially:
+
+PART 1: ANALYZE THE PROBLEM
+  1.1 Formulate the mini-problem (state the technical contradiction)
+  1.2 Identify the conflicting pair: TOOL vs. OBJECT
+  1.3 Build graphical models of the technical contradictions
+  1.4 Select one model for further analysis
+  1.5 Intensify the conflict (push to extremes)
+  1.6 Formulate a model of the problem (X-element)
+  1.7 Apply Standard Solutions (76) if applicable
+
+PART 2: ANALYZE THE PROBLEM MODEL
+  2.1 Define the Operational Zone (OZ) — where the conflict occurs
+  2.2 Define the Operational Time (OT) — when the conflict occurs
+  2.3 Define Substance-Field Resources (SFR) available in/around the system
+
+PART 3: FORMULATE THE IDEAL FINAL RESULT (IFR) AND PHYSICAL CONTRADICTION
+  3.1 Formulate IFR-1: "The X-element, without complicating the system or
+      causing harmful effects, eliminates [harmful action] during [OT] within
+      [OZ], while maintaining the tool's ability to perform [useful action]."
+  3.2 Intensify IFR-1 by introducing constraints
+  3.3 Formulate the Physical Contradiction at the macro level
+  3.4 Formulate the Physical Contradiction at the micro level
+  3.5 Formulate IFR-2: "The OZ must, BY ITSELF, provide both [X] and [anti-X]."
+
+PART 4: MOBILIZE AND USE SUBSTANCE-FIELD RESOURCES
+  4.1 Apply the "Little People" modeling method
+  4.2 Step back from the Ideal Final Result (retreat if needed)
+  4.3 Use a mixture of substance resources
+  4.4 Use "voids" (empty spaces) as resources
+  4.5 Use derived resources (produced from existing ones)
+  4.6 Use an electric field / electron current
+  4.7 Use a field and a field-sensitive substance
+
+PART 5: APPLY THE KNOWLEDGE BASE
+  5.1 Apply 76 Standard Solutions
+  5.2 Apply 40 Inventive Principles
+  5.3 Apply Physical Effects database
+  5.4 Apply Chemical Effects database
+  5.5 Apply Geometric Effects database
+
+PART 6: CHANGE OR REFORMULATE THE PROBLEM
+  6.1 If solved, transition to developing the concept
+  6.2 If not solved, check if Part 1.1 reformulated the problem correctly
+  6.3 Reformulate the mini-problem at the supersystem level
+  6.4 Reformulate the contradiction in reverse
+
+PART 7: ANALYZE THE METHOD OF REMOVING THE PHYSICAL CONTRADICTION
+  7.1 Check the quality of the obtained answer against the IFR
+  7.2 Evaluate the novelty of the solution
+  7.3 What sub-problems will need to be solved?
+
+PART 8: APPLY THE OBTAINED SOLUTION
+  8.1 Define how the supersystem should be changed
+  8.2 Check if the system can perform the function in a new way
+  8.3 Apply the solution principle to other problems
+
+PART 9: ANALYZE THE SOLUTION PROCESS
+  9.1 Compare actual problem-solving process with theoretical ARIZ
+  9.2 Compare the obtained solution with the TRIZ knowledge base
+  → Record any deviations as potential new knowledge
+
+================================================================================
+PART 7: SEPARATION PRINCIPLES (for Physical Contradictions)
+================================================================================
+
+When a system must be BOTH X and NOT-X simultaneously:
+
+1. SEPARATION IN TIME
+   At time T1 the system has property X; at time T2 it has property NOT-X.
+   ML: Curriculum learning (easy first, hard later); annealing schedules;
+   train/freeze cycles; staged training (pre-train then fine-tune)
+
+2. SEPARATION IN SPACE
+   Part A of the system has property X; Part B has property NOT-X.
+   ML: Sparse MoE (different experts for different inputs); multi-head
+   attention (different heads capture different patterns); modular networks
+
+3. SEPARATION UPON CONDITION
+   Under condition C1 the system has property X; under C2 it has NOT-X.
+   ML: Conditional computation, gating mechanisms, adaptive activation
+   functions (ReLU is linear when x>0, zero otherwise), dynamic inference
+
+4. SEPARATION BETWEEN SYSTEM LEVELS
+   The system as a whole has property X; a subsystem has property NOT-X.
+   ML: Multi-scale representations (global coarse + local fine); hierarchical
+   models; ensembles (individual models disagree, ensemble agrees)
+
+================================================================================
+PART 8: TRIZ APPLICATION PROTOCOL FOR ML/AI RESEARCH
+================================================================================
+
+When generating a research idea, follow this protocol:
+
+STEP 1: IDENTIFY THE TECHNICAL CONTRADICTION
+  What ML metric are you trying to IMPROVE? (e.g., accuracy, recall, speed)
+  What ML metric gets WORSE as a result? (e.g., compute cost, memory, latency)
+  Map both to 39 Parameters. This IS your research problem.
+
+STEP 2: CONSULT THE CONTRADICTION MATRIX
+  Find the 2-4 Inventive Principles recommended for your specific contradiction.
+  Read the full description of each principle (Part 1 above).
+
+STEP 3: APPLY EACH PRINCIPLE
+  For each recommended principle, brainstorm 2-3 concrete ML implementations:
+  - What would this principle look like in neural network architecture?
+  - What training procedure change does it suggest?
+  - How would you implement it in code?
+
+STEP 4: DEFINE THE IDEAL FINAL RESULT (IFR)
+  What would the PERFECT solution look like?
+  "The model achieves [target accuracy] WITHOUT increasing [compute/latency/
+  memory], WITHOUT adding [parameters/layers], and WITHOUT [overfitting]."
+  Work backward from the IFR to find minimal viable changes.
+
+STEP 5: EVALUATE IDEALITY
+  Ideality = Benefits / (Costs + Harm)
+  Benefits: accuracy improvement, generalization gain, new capability
+  Costs: additional parameters, training time, inference latency
+  Harm: overfitting risk, instability, complexity, technical debt
+  Only pursue ideas where BENEFITS clearly exceed COSTS + HARM.
+
+STEP 6: VERIFY WITH EVOLUTION LAWS
+  - Does this idea move along an evolutionary trend? (Law 1-8)
+  - Which subsystem is the current bottleneck? (Law 2)
+  - Is this a macro→micro transition? (Law 5)
+
+STEP 7: JUDGE NOVELTY
+  Ideas inspired by UNDERUTILIZED inventive principles (not commonly applied
+  in ML literature) have inherently higher novelty. The most common ML
+  principles are #1 (Segmentation), #5 (Merging), #35 (Parameter Change).
+  The LEAST common in ML are #22 (Turn Harm to Benefit), #9 (Preliminary
+  Anti-Action), #37 (Thermal Expansion), #21 (Skipping).
+
+================================================================================
+END OF OFFICIAL TRIZ KNOWLEDGE BASE
+================================================================================

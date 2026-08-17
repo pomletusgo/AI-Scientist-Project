@@ -1,0 +1,46 @@
+{
+  "_comment": "AI-Scientist 课题范围控制配置 —— 修改此文件来控制研究方向和论文内容",
+
+  "domain": "Large Language Model Safety Alignment",
+  "domain_cn": "大语言模型安全对齐",
+
+  "keywords": [
+    "RLHF safety",
+    "reward hacking",
+    "jailbreak defense",
+    "representation engineering",
+    "multi-agent red teaming",
+    "adversarial robustness"
+  ],
+
+  "core_papers": [
+    {"title": "Training language models to follow instructions with human feedback", "key": "ouyang2022training"},
+    {"title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model", "key": "rafailov2023dpo"},
+    {"title": "Constitutional AI: Harmlessness from AI Feedback", "key": "bai2022constitutional"},
+    {"title": "Red-Teaming Language Models with Language Models", "key": "perez2022redteaming"},
+    {"title": "Representation Engineering: A Top-Down Approach to AI Transparency", "key": "zou2023representation"}
+  ],
+
+  "search_terms_for_references": [
+    "LLM safety alignment",
+    "jailbreak defense mechanism",
+    "reward model robustness",
+    "RLHF reward hacking",
+    "AI red teaming language model"
+  ],
+
+  "research_directions": [
+    "Multi-agent red teaming for safety evaluation",
+    "Representation engineering for model alignment",
+    "Adversarial training against jailbreak attacks",
+    "Reward model ensemble for robust alignment"
+  ],
+
+  "constraints": {
+    "model_size": "7B-13B parameters",
+    "datasets": ["SafeRLHF", "Anthropic HH", "AdvBench", "JailbreakBench"],
+    "methods": ["DPO", "RLHF", "representation control", "ensemble methods"],
+    "exclude": ["multimodal", "vision", "robotics", "protein", "drug"],
+    "exclude_topics": "Do NOT discuss: multimodal models, computer vision, robotics, protein folding, drug discovery, or any topic unrelated to language model safety."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "domain": "catalysis",
+  "sub_domain": "Bayesian optimization and in-context learning for heterogeneous catalyst design",
+  "core_problem": "Standard surrogate models like Gaussian processes assume smoothness and continuity, which fails in highly non-linear design spaces such as heterogeneous catalysis, slowing experimental materials discovery due to the need to characterize many suboptimal candidates.",
+  "methodology_summary": "The paper uses frozen large language models (LLMs) as surrogate models in Bayesian optimization (BO) by converting experimental synthesis and testing data into natural language prompts. In-context learning (ICL) updates the surrogate with new observations via an AskTell algorithm, enabling uncertainty estimation and gradient-free optimization without feature engineering or model retraining.",
+  "key_trade_off": "The approach balances the need for flexible, non-parametric surrogate models that can handle non-smooth response surfaces in catalysis, against the computational cost and potential unreliability of using frozen, proprietary LLMs with natural language prompts.",
+  "limitations": [
+    "Dependence on proprietary LLMs (e.g., GPT-3.5, Gemini) limits reproducibility and incurs cost.",
+    "Context window restricts the number of examples for in-context learning, potentially hampering scalability.",
+    "Uncertainty estimates from LLM token probabilities may be poorly calibrated, affecting acquisition function reliability.",
+    "Experimental validation is limited to a single live catalyst system (RWGS) with only six iterations.",
+    "Performance may be sensitive to prompt formatting and qualitative content, requiring careful engineering."
+  ],
+  "future_directions": [
+    "Apply the method to multi-objective and constrained Bayesian optimization problems.",
+    "Integrate with open-source LLMs to improve reproducibility and lower costs.",
+    "Combine in-context learning with parameter-efficient fine-tuning on domain-specific data for better accuracy and calibration.",
+    "Develop specialized uncertainty quantification techniques for LLM surrogates, such as ensemble or conformal prediction.",
+    "Extend to fully autonomous closed-loop experimental platforms integrated with robotic labs."
+  ],
+  "research_gaps": [
+    "Need for rigorous comparison with more advanced surrogate models (e.g., Bayesian neural networks, random forests) across diverse materials systems.",
+    "Lack of theoretical convergence guarantees for LLM-based Bayesian optimization.",
+    "Limited understanding of how prompt design influences prediction accuracy and calibration in ICL settings."
+  ],
+  "suggested_title": "Open-Source LLM Surrogates with Calibrated Uncertainties for Scalable Bayesian Optimization in Catalysis",
+  "suggested_abstract": "While frozen large language models (LLMs) enable Bayesian optimization via in-context learning, their reliance on proprietary APIs, poor uncertainty calibration, and context limitations hinder scalability. We introduce a framework that fine-tunes open-source LLMs on scientific corpora and integrates adaptive prompting with uncertainty calibration techniques. Evaluated on multiple catalytic benchmarks and in autonomous closed-loop experiments, our method achieves superior sample efficiency and robustness, outperforming both Gaussian processes and frozen LLM surrogates."
+}

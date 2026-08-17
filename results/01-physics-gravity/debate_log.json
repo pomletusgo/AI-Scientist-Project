@@ -1,0 +1,554 @@
+{
+  "folder": "d:\\AI-Scientist\\results\\01-physics-gravity",
+  "started_at": "2026-08-11T01:00:28.957844",
+  "mechanism": "consensus+voting",
+  "rounds": 3,
+  "converged": false,
+  "convergence_reason": "",
+  "rounds_detail": [
+    {
+      "round": 1,
+      "phase1_reviews": {
+        "Methodology": {
+          "Summary": "The paper proposes a scaffolded simulation-based module for teaching gravitational light deflection to undergraduates, progressing from an accelerating-elevator analogy to heuristic derivation to full geodesic formalism via student-controlled mathematical overlays. It reports a quasi-experimental study with 120 students showing improved conceptual gains and reduced cognitive load compared to control groups, but the abstract is truncated and no methodological or empirical details are provided in the submitted text.",
+          "Strengths": [
+            "Identifies a genuine pedagogical challenge—teaching light deflection without overwhelming mathematical prerequisites.",
+            "Proposes a theoretically grounded scaffolding sequence linking physical intuition (elevator) to heuristic reasoning to formal GR (geodesics)."
+          ],
+          "Weaknesses": [
+            "The manuscript omits all essential methodological details: no description of the simulation's implementation (e.g., software, interface mechanics, overlay logic), no specification of the 'heuristic acceleration-term derivation' (e.g., its mathematical form or justification), and no definition of outcome measures (e.g., how 'conceptual gains' or 'cognitive load' were quantified).",
+            "The empirical evaluation is unreproducible: sample characteristics, randomization protocol, instrument validity/reliability, statistical tests, effect size calculations, and raw or summary results are entirely absent.",
+            "Bibliographic errors undermine scholarly rigor—e.g., two Hartle entries with contradictory publication years and titles; Weiskopf et al. (2016) incorrectly attributed to 'J. Weiskopf et al.' in bib but cited as 'Weiskopf_gr_vis_2004'—requiring full verification and correction."
+          ],
+          "Originality": 2,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Experiments": {
+          "Summary": "The paper proposes a scaffolded simulation-based module for teaching gravitational light deflection, progressing from an accelerating-elevator analogy through heuristic derivation to geodesic components, with student-controlled mathematical overlays. It reports a quasi-experimental study with 120 undergraduates claiming superior conceptual gains, lower cognitive load, and fewer misconceptions compared to traditional and heuristic-only controls—but the manuscript is incomplete and omits all essential experimental details.",
+          "Strengths": [
+            "Identifies a genuine pedagogical gap in GR instruction for undergraduates",
+            "Proposes a theoretically grounded scaffolding sequence (elevator → acceleration → geodesics) aligned with cognitive load theory"
+          ],
+          "Weaknesses": [
+            "No description of the simulation's technical implementation, interface, or interactivity mechanics—making replication impossible",
+            "Zero methodological detail: no pre/post-test instruments named or validated, no scoring rubrics, no reporting of reliability (e.g., Cronbach's alpha), no attrition or compliance data",
+            "No statistical reporting: effect sizes (e.g., d > 0.6) lack standard errors, confidence intervals, or adjustment for multiple comparisons; 'significant' claims have no p-values, test statistics, or correction for family-wise error"
+          ],
+          "Originality": 3,
+          "Quality": 1,
+          "Clarity": 2,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Literature": {
+          "Summary": "The paper purports to introduce a scaffolded simulation module for teaching gravitational light deflection, claiming empirical superiority over traditional and heuristic-only instruction based on a quasi-experimental study with 120 students. However, the manuscript is incomplete (truncated mid-sentence), lacks all essential empirical details (methods, instruments, results, analysis), contains numerous fabricated or misattributed references, and makes unsupported claims about effect sizes, cognitive load, and misconception reduction without data or citations in text.",
+          "Strengths": [
+            "The pedagogical goal—bridging intuition and rigor in GR instruction—is genuinely important and timely.",
+            "The idea of progressive layer revelation in simulations aligns with established cognitive load and scaffolding principles (though unimplemented here)."
+          ],
+          "Weaknesses": [
+            "The manuscript is incomplete: critical sections (methods, results, discussion, conclusion) are missing, and the abstract cuts off mid-sentence ('reshap...').",
+            "At least 5 references are fabricated or severely misattributed (e.g., Hartle 2020 AJPh paper does not exist; Guay 1976 cited as 2019 Eur. J. Phys. paper; 'heuristic_ref' is a placeholder with no real publication).",
+            "No in-text citations appear—despite a long bibliography, none of the cited works are discussed, compared, or used to frame the contribution, violating standards for related work coverage and scholarly grounding."
+          ],
+          "Originality": 2,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        }
+      },
+      "phase2_consensus": {
+        "consensus_points": [
+          {
+            "weakness_id": 1,
+            "weakness_text": "The manuscript omits all essential methodological details: no description of the simulation's implementation, no specification of the 'heuristic acceleration-term derivation', and no definition of outcome measures.",
+            "source_reviewer": "Methodology",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "Provide a dedicated Methods section detailing: (a) simulation platform (e.g., EJS, Python/Manim), interface design (e.g., slider controls, overlay toggles), and mathematical logic of overlays; (b) explicit derivation steps and assumptions underlying the heuristic acceleration-term model; (c) full description of validated instruments (e.g., Light Deflection Concept Inventory), scoring rubrics, reliability metrics (Cronbach’s α), and operational definitions of 'conceptual gains' and 'cognitive load'.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — without this, the intervention is undefined and irreproducible",
+              "Experiments": "agree — same omission prevents experimental replication and validity assessment",
+              "Literature": "agree — absence of methodological grounding undermines scholarly contribution"
+            }
+          },
+          {
+            "weakness_id": 2,
+            "weakness_text": "The empirical evaluation is unreproducible: sample characteristics, randomization protocol, instrument validity/reliability, statistical tests, effect size calculations, and raw or summary results are entirely absent.",
+            "source_reviewer": "Methodology",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "Add a complete Results section including: (a) participant demographics (N=120 broken down by cohort, institution, prior physics exposure); (b) randomization procedure (e.g., block randomization by class section); (c) pre/post-test means, SDs, effect sizes (Cohen’s d with 95% CIs), p-values with test statistics (e.g., F(2,117)=X.XX, p=.XX) and correction for multiple comparisons; (d) attrition/compliance rates; (e) raw data or anonymized summary tables in supplementary material.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — statistical reporting is foundational to empirical claims",
+              "Experiments": "agree — this is the core failure of the experimental section",
+              "Literature": "agree — unreproducible claims cannot be situated within existing literature"
+            }
+          },
+          {
+            "weakness_id": 3,
+            "weakness_text": "Bibliographic errors undermine scholarly rigor—e.g., two Hartle entries with contradictory publication years and titles; Weiskopf et al. (2016) incorrectly attributed to 'J. Weiskopf et al.' in bib but cited as 'Weiskopf_gr_vis_2004'; at least 5 references are fabricated or severely misattributed.",
+            "source_reviewer": "Literature",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "Audit and correct all references against authoritative sources (e.g., DOI resolution, journal archives): remove placeholder entries (e.g., 'heuristic_ref'); verify existence, year, title, and author list for every citation; ensure in-text citations match bibliography entries exactly; add DOIs where available; cite only works actually engaged in the text.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — bibliographic integrity is prerequisite for methodological credibility",
+              "Experiments": "agree — fabricated references erode trust in empirical framing and instrument design",
+              "Literature": "agree — this is a fundamental breach of scholarly ethics and standards"
+            }
+          },
+          {
+            "weakness_id": 4,
+            "weakness_text": "The manuscript is incomplete: critical sections (methods, results, discussion, conclusion) are missing, and the abstract cuts off mid-sentence ('reshap...').",
+            "source_reviewer": "Literature",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "Restore all missing sections: complete abstract (ending with full sentence); add Methods, Results, Discussion, and Conclusion sections with substantive content; ensure logical flow and adherence to standard IMRAD structure.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — incompleteness renders the paper non-evaluable as research",
+              "Experiments": "agree — no empirical work can be assessed without results and discussion",
+              "Literature": "agree — truncation violates basic publishing norms and suggests draft status"
+            }
+          },
+          {
+            "weakness_id": 5,
+            "weakness_text": "No in-text citations appear—despite a long bibliography, none of the cited works are discussed, compared, or used to frame the contribution.",
+            "source_reviewer": "Literature",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "Integrate citations meaningfully throughout Introduction and Discussion: e.g., cite Aslanides & Savage (2021) when introducing rotated graph paper analogies; cite Baily & Finkelstein (2015) when justifying interpretation-focused instruction; cite Mayer & Fiorella (2021) when discussing multimedia design principles; explicitly position the current work relative to cited studies.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — lack of conceptual framing weakens theoretical grounding",
+              "Experiments": "agree — without citing prior work on cognitive load or simulation efficacy, claims lack context",
+              "Literature": "agree — bibliography without textual engagement is academically meaningless"
+            }
+          }
+        ],
+        "disputed_points": [],
+        "overall_assessment": {
+          "paper_ready": false,
+          "remaining_major_issues": 5,
+          "recommendation": "reject"
+        }
+      },
+      "phase3_votes": [],
+      "phase4_applied": {
+        "total": 5,
+        "strong_consensus": 5,
+        "weak_consensus": 0,
+        "voting": 0,
+        "high_priority": 5
+      },
+      "applied": [
+        {
+          "text": "Provide a dedicated Methods section detailing: (a) simulation platform (e.g., EJS, Python/Manim), interface design (e.g., slider controls, overlay toggles), and mathematical logic of overlays; (b) explicit derivation steps and assumptions underlying the heuristic acceleration-term model; (c) full description of validated instruments (e.g., Light Deflection Concept Inventory), scoring rubrics, reliability metrics (Cronbach’s α), and operational definitions of 'conceptual gains' and 'cognitive load'.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "Add a complete Results section including: (a) participant demographics (N=120 broken down by cohort, institution, prior physics exposure); (b) randomization procedure (e.g., block randomization by class section); (c) pre/post-test means, SDs, effect sizes (Cohen’s d with 95% CIs), p-values with test statistics (e.g., F(2,117)=X.XX, p=.XX) and correction for multiple comparisons; (d) attrition/compliance rates; (e) raw data or anonymized summary tables in supplementary material.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "Audit and correct all references against authoritative sources (e.g., DOI resolution, journal archives): remove placeholder entries (e.g., 'heuristic_ref'); verify existence, year, title, and author list for every citation; ensure in-text citations match bibliography entries exactly; add DOIs where available; cite only works actually engaged in the text.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "Restore all missing sections: complete abstract (ending with full sentence); add Methods, Results, Discussion, and Conclusion sections with substantive content; ensure logical flow and adherence to standard IMRAD structure.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "Integrate citations meaningfully throughout Introduction and Discussion: e.g., cite Aslanides & Savage (2021) when introducing rotated graph paper analogies; cite Baily & Finkelstein (2015) when justifying interpretation-focused instruction; cite Mayer & Fiorella (2021) when discussing multimedia design principles; explicitly position the current work relative to cited studies.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        }
+      ],
+      "success": false
+    },
+    {
+      "round": 2,
+      "phase1_reviews": {
+        "Methodology": {
+          "Summary": "The paper introduces a scaffolded simulation-based module for teaching gravitational light deflection to undergraduates, progressing from an accelerating-elevator analogy through a heuristic derivation to full geodesic formalism using 'student-controlled mathematical overlays'. A quasi-experimental study with 120 students reports higher conceptual gains and lower cognitive load for the scaffolded group versus traditional and heuristic-only controls, with progressive layer revelation outperforming static overlays. However, the manuscript is incomplete: the abstract truncates mid-sentence, critical sections (methods, results, figures, equations) are missing, and no technical details are provided about the simulation's mathematical implementation, validation, or alignment with general relativity.",
+          "Strengths": [
+            "Identifies a genuine pedagogical gap: the lack of empirically validated, accessible pathways from heuristic intuition to rigorous GR treatment of light deflection.",
+            "Employs a theoretically motivated design principle (progressive revelation of mathematical layers) aligned with cognitive load theory and scaffolding literature."
+          ],
+          "Weaknesses": [
+            "The manuscript is incomplete: the abstract is cut off, and essential sections—including detailed methodology (simulation architecture, equation derivation logic, overlay mechanics), full results (statistical models, instrument reliability, item analysis), and discussion of limitations—are absent.",
+            "No mathematical specification is given for the 'heuristic acceleration-term derivation' or its relationship to the exact null geodesic equation in Schwarzschild spacetime; without this, the method's physical soundness and potential for misconception propagation cannot be assessed.",
+            "Lacks empirical transparency: no description of assessment instruments (e.g., validated conceptual survey), IRB approval statement, pre-registration details, or reporting of effect-size confidence intervals for all comparisons (only one d-value is reported with CI)."
+          ],
+          "Originality": 3,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Experiments": {
+          "Summary": "The paper proposes a scaffolded simulation-based module for teaching gravitational light deflection to undergraduates, progressing from an accelerating-elevator analogy through heuristic derivation to full geodesic formalism. It reports a quasi-experimental study with 120 students comparing this module against 'traditional-derivation' and 'heuristic-only' controls, claiming significant gains in conceptual understanding and reduced cognitive load, with additional benefits from progressive layer revelation.",
+          "Strengths": [
+            "Proposes a theoretically grounded, scaffolded design aligned with cognitive load theory and physics education research.",
+            "Targets a known pedagogical gap—empirical validation of heuristic GR instruction—and attempts a multi-condition comparison."
+          ],
+          "Weaknesses": [
+            "The manuscript is incomplete: critical experimental details (assessment instruments, randomization procedure, simulation implementation specs, statistical models, raw data summary) are entirely missing, preventing replication or validity assessment.",
+            "Baseline conditions ('traditional-derivation', 'heuristic-only') are undefined and uncited—no justification is given for their design or fidelity, making comparisons unfair and uninterpretable.",
+            "No information is provided about reliability or validity of the conceptual gain or cognitive load measures, nor about control for pretest differences, instructor effects, or multiple hypothesis testing—rendering all reported effect sizes and p-values unverifiable."
+          ],
+          "Originality": 3,
+          "Quality": 1,
+          "Clarity": 2,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Literature": {
+          "Summary": "The paper presents an abstract for a study introducing a scaffolded simulation module to teach gravitational light deflection to undergraduate physics students, claiming superior learning outcomes and reduced cognitive load compared to traditional and heuristic-only approaches. However, the manuscript is incomplete—abruptly cut off mid-sentence—and omits all essential sections (introduction, methods, results, discussion, conclusion), figures, tables, and technical details of the intervention or evaluation.",
+          "Strengths": [
+            "Identifies a genuine pedagogical challenge: the high barrier to understanding gravitational light deflection in undergraduate GR instruction.",
+            "Proposes a potentially valuable design principle—progressive revelation of mathematical layers—in simulation-based physics education."
+          ],
+          "Weaknesses": [
+            "The manuscript is incomplete: it contains only an abstract and bibliography; no introduction, methodology, results, discussion, or conclusion is provided, making empirical claims unverifiable.",
+            "Multiple citations are inaccurate: e.g., Hartle (2003) is duplicated with conflicting metadata (one entry lists Brown as co-author and 2017 year; another cites '2020'); Guay (1976) is erroneously dated 2019; Clement (1993) is listed as 2018; Schutz (2009) is dated 2017; several entries lack DOIs or use deprecated journal titles.",
+            "Abstract makes strong empirical claims (e.g., 'd = 0.89', 'p < 0.001', 'post-hoc analyses') without describing instruments, sampling, statistical tests, effect-size calculations, or validity evidence—violating basic standards for educational research reporting."
+          ],
+          "Originality": 2,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        }
+      },
+      "phase2_consensus": {
+        "consensus_points": [
+          {
+            "weakness_id": 1,
+            "weakness_text": "The manuscript is incomplete: the abstract is cut off, and essential sections—including detailed methodology, full results, figures, equations, and discussion—are absent.",
+            "source_reviewer": "Methodology",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "The authors must submit a complete manuscript containing: (1) a fully written abstract ending with a clear conclusion; (2) Introduction establishing context and research gap; (3) Methods section detailing simulation architecture, derivation logic, overlay mechanics, participant recruitment, randomization, IRB approval, and assessment instruments; (4) Results section with statistical models, effect-size CIs for all comparisons, item-level analysis, and visualizations; (5) Discussion interpreting findings in light of GR pedagogy literature and acknowledging limitations; (6) Conclusion summarizing contributions and implications.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — without these sections, no methodological rigor or theoretical grounding can be assessed.",
+              "Experiments": "agree — absence of methods and results renders empirical claims unverifiable and study design irreproducible.",
+              "Literature": "agree — incomplete structure violates basic scholarly norms; no argument or evidence can be evaluated without full text."
+            }
+          },
+          {
+            "weakness_id": 2,
+            "weakness_text": "No mathematical specification is given for the 'heuristic acceleration-term derivation' or its relationship to the exact null geodesic equation in Schwarzschild spacetime.",
+            "source_reviewer": "Methodology",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "The authors must explicitly derive the heuristic approximation step-by-step, state its domain of validity (e.g., weak-field, small-angle limit), quantify its error relative to the full Schwarzschild null geodesic solution (e.g., via series expansion or numerical comparison), and cite or justify its pedagogical use in prior literature (e.g., Hartle, Carroll, or Aslanides & Savage).",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — physical soundness and misconception risk hinge on this specification.",
+              "Experiments": "agree — without knowing what students are learning mathematically, interpretation of conceptual gains is impossible.",
+              "Literature": "agree — omission violates expectations for GR education research, where mathematical fidelity is central to epistemic validity."
+            }
+          },
+          {
+            "weakness_id": 3,
+            "weakness_text": "Lacks empirical transparency: no description of assessment instruments, IRB approval, pre-registration, or reporting of effect-size confidence intervals for all comparisons.",
+            "source_reviewer": "Methodology",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "The authors must report: (1) names, sources, and psychometric properties (Cronbach’s α, item difficulty/discrimination) of all instruments; (2) IRB protocol number and statement of informed consent; (3) pre-registered hypotheses, analysis plan, and deviation rationale (if any); (4) Cohen’s d with 95% CIs for *all* pairwise comparisons (not just one), plus adjusted p-values if multiple testing was performed.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — transparency is foundational to educational research credibility.",
+              "Experiments": "agree — without instrument validation and analytic transparency, effect sizes are meaningless.",
+              "Literature": "agree — failure to meet STROBE or CONSORT-Educ standards invalidates empirical claims per field norms."
+            }
+          },
+          {
+            "weakness_id": 4,
+            "weakness_text": "Baseline conditions ('traditional-derivation', 'heuristic-only') are undefined and uncited — no justification is given for their design or fidelity.",
+            "source_reviewer": "Experiments",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "The authors must define each condition in detail: textbook references, lecture slides or activity handouts (or appendices), time-on-task equivalence, instructor training protocols, and fidelity checks (e.g., observational coding or lesson logs). Each condition must be anchored to cited literature (e.g., 'traditional' aligned with Hartle (2003) §9.3; 'heuristic-only' adapted from Aslanides & Savage (2021)).",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — comparators must be theoretically and empirically justified to support causal inference.",
+              "Experiments": "agree — undefined controls invalidate internal validity and make replication impossible.",
+              "Literature": "agree — lack of citation and definition breaks scholarly chain of evidence; readers cannot situate the intervention."
+            }
+          },
+          {
+            "weakness_id": 5,
+            "weakness_text": "Multiple citations are inaccurate: e.g., Hartle (2003) duplicated with conflicting metadata; Guay (1976) dated 2019; Clement (1993) listed as 2018; Schutz (2009) dated 2017; several entries lack DOIs or use deprecated journal titles.",
+            "source_reviewer": "Literature",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "The authors must audit and correct all references using authoritative sources (e.g., DOI resolver, journal websites, library catalogs), standardize formatting to AJP/PRPER style, ensure every entry has a working DOI (or justification if unavailable), and remove duplicate entries. Cross-check publication years, author lists, and titles against original sources.",
+            "priority": "medium",
+            "reviewer_positions": {
+              "Methodology": "agree — citation errors undermine trust in scholarly rigor and may misrepresent prior work.",
+              "Experiments": "agree — inaccurate references impair ability to evaluate baseline condition design and theoretical framing.",
+              "Literature": "agree — bibliographic integrity is non-negotiable; errors suggest insufficient engagement with source material."
+            }
+          },
+          {
+            "weakness_id": 6,
+            "weakness_text": "Abstract makes strong empirical claims (e.g., 'd = 0.89', 'p < 0.001', 'post-hoc analyses') without describing instruments, sampling, statistical tests, effect-size calculations, or validity evidence.",
+            "source_reviewer": "Literature",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "The abstract must be rewritten to omit all specific statistics unless fully supported by complete Methods and Results sections. It should instead state *what was done*, *who participated*, *what was measured*, and *the direction/magnitude of main effects* in qualitative terms (e.g., 'significantly higher gains' → 'moderate-to-large gains'), pending full reporting.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — premature quantification in an incomplete manuscript misleads readers and violates reporting ethics.",
+              "Experiments": "agree — abstracts must reflect verifiable content; uncontextualized stats are scientifically irresponsible.",
+              "Literature": "agree — abstracts serve as scholarly contracts; unsupported claims breach trust and disciplinary standards."
+            }
+          }
+        ],
+        "disputed_points": [],
+        "overall_assessment": {
+          "paper_ready": false,
+          "remaining_major_issues": 6,
+          "recommendation": "reject"
+        }
+      },
+      "phase3_votes": [],
+      "phase4_applied": {
+        "total": 6,
+        "strong_consensus": 6,
+        "weak_consensus": 0,
+        "voting": 0,
+        "high_priority": 5
+      },
+      "applied": [
+        {
+          "text": "The authors must submit a complete manuscript containing: (1) a fully written abstract ending with a clear conclusion; (2) Introduction establishing context and research gap; (3) Methods section detailing simulation architecture, derivation logic, overlay mechanics, participant recruitment, randomization, IRB approval, and assessment instruments; (4) Results section with statistical models, effect-size CIs for all comparisons, item-level analysis, and visualizations; (5) Discussion interpreting findings in light of GR pedagogy literature and acknowledging limitations; (6) Conclusion summarizing contributions and implications.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "The authors must explicitly derive the heuristic approximation step-by-step, state its domain of validity (e.g., weak-field, small-angle limit), quantify its error relative to the full Schwarzschild null geodesic solution (e.g., via series expansion or numerical comparison), and cite or justify its pedagogical use in prior literature (e.g., Hartle, Carroll, or Aslanides & Savage).",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "The authors must report: (1) names, sources, and psychometric properties (Cronbach’s α, item difficulty/discrimination) of all instruments; (2) IRB protocol number and statement of informed consent; (3) pre-registered hypotheses, analysis plan, and deviation rationale (if any); (4) Cohen’s d with 95% CIs for *all* pairwise comparisons (not just one), plus adjusted p-values if multiple testing was performed.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "The authors must define each condition in detail: textbook references, lecture slides or activity handouts (or appendices), time-on-task equivalence, instructor training protocols, and fidelity checks (e.g., observational coding or lesson logs). Each condition must be anchored to cited literature (e.g., 'traditional' aligned with Hartle (2003) §9.3; 'heuristic-only' adapted from Aslanides & Savage (2021)).",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "The abstract must be rewritten to omit all specific statistics unless fully supported by complete Methods and Results sections. It should instead state *what was done*, *who participated*, *what was measured*, and *the direction/magnitude of main effects* in qualitative terms (e.g., 'significantly higher gains' → 'moderate-to-large gains'), pending full reporting.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "The authors must audit and correct all references using authoritative sources (e.g., DOI resolver, journal websites, library catalogs), standardize formatting to AJP/PRPER style, ensure every entry has a working DOI (or justification if unavailable), and remove duplicate entries. Cross-check publication years, author lists, and titles against original sources.",
+          "priority": "medium",
+          "agreement": "strong_consensus"
+        }
+      ],
+      "success": false
+    },
+    {
+      "round": 3,
+      "phase1_reviews": {
+        "Methodology": {
+          "Summary": "The paper proposes a scaffolded simulation-based module for teaching gravitational light deflection to undergraduates, progressing from elevator thought experiments to geodesic reasoning. It reports a quasi-experimental study (N=120) claiming superior conceptual learning and reduced cognitive load compared to traditional and heuristic-only controls, with additional benefits from progressive layer revelation. However, the manuscript is truncated mid-conclusion and lacks essential methodological detail.",
+          "Strengths": [
+            "Identifies a genuine pedagogical gap: the absence of empirically validated, accessible approaches to gravitational light deflection.",
+            "Introduces a theoretically plausible scaffolding design principle—progressive revelation of mathematical layers—which aligns with cognitive load theory and prior work on worked examples."
+          ],
+          "Weaknesses": [
+            "The manuscript is incomplete: the abstract and main text cut off abruptly, omitting the conclusion, discussion of limitations, and implications; no results section, figures, or tables are included.",
+            "No technical specification of the simulation is provided: missing are the underlying physics model (e.g., Schwarzschild metric used?), implementation of geodesic integration (numerical method? step size? initial conditions?), or interface mechanics of 'progressive layer revelation'.",
+            "Empirical methods are inadequately described: no validation or reliability data for the conceptual assessment instrument is given; cognitive load is claimed but no measurement instrument (e.g., Paas scale, NASA-TLX) or protocol is reported; statistical analyses lack model assumptions, covariates, or corrections for multiple testing."
+          ],
+          "Originality": 3,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Experiments": {
+          "Summary": "The paper proposes a scaffolded simulation-based module for teaching gravitational light deflection, progressing from elevator analogies to geodesics via student-controlled mathematical overlays. It reports a quasi-experimental study with 120 undergraduates showing superior conceptual gains and lower cognitive load for the scaffolded simulation group versus traditional and heuristic-only controls, and claims progressive layer revelation outperforms static overlays.",
+          "Strengths": [
+            "Identifies a genuine pedagogical gap in teaching gravitational light deflection at the undergraduate level.",
+            "Proposes a theoretically grounded, multi-stage scaffolding design aligned with cognitive load theory and physics education research."
+          ],
+          "Weaknesses": [
+            "The manuscript is incomplete: critical sections (full methods, results, discussion, references) are missing, preventing verification of experimental execution and statistical analysis.",
+            "No psychometric validation is provided for the 'conceptual gains' assessment; instrument name, sample items, reliability (e.g., Cronbach's alpha), and construct validity evidence are absent.",
+            "Baseline conditions ('traditional-derivation', 'heuristic-only') are inadequately described—no detail on instructional materials, duration, instructor training, or fidelity checks, making fair comparison impossible."
+          ],
+          "Originality": 3,
+          "Quality": 1,
+          "Clarity": 2,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Literature": {
+          "Summary": "The paper introduces a scaffolded simulation module for teaching gravitational light deflection, progressing from elevator thought experiments to geodesics via interactive, layer-revealing visualizations. It reports a quasi-experimental study with 120 undergraduates showing improved conceptual gains and reduced cognitive load versus control groups. However, the manuscript is incomplete—abruptly cut off mid-sentence—and lacks critical sections including introduction, methods, results presentation, discussion, and conclusion.",
+          "Strengths": [
+            "Proposes a pedagogically grounded, multi-stage scaffolded approach that bridges intuitive analogies and formal GR concepts—a potentially valuable design principle.",
+            "Empirically compares multiple instructional conditions (traditional, heuristic-only, scaffolded simulation), addressing a real gap in GR education research."
+          ],
+          "Weaknesses": [
+            "The manuscript is incomplete: it ends mid-sentence after the abstract, with no introduction, methodology, results analysis, discussion, or conclusion—making evaluation of claims impossible.",
+            "At least 6 bibliography entries contain serious factual errors (e.g., misattributed authorship, incorrect years, invalid DOIs, or non-existent articles); these must be fully audited and corrected against original sources.",
+            "Empirical claims (e.g., 'd = 0.89', 'p < 0.001') are presented without reporting key methodological details: instrument validity/reliability, randomization protocol, IRB approval, participant demographics, or statistical assumptions—these must be added in full methods and results sections."
+          ],
+          "Originality": 3,
+          "Quality": 1,
+          "Clarity": 2,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        }
+      },
+      "phase2_consensus": {
+        "consensus_points": [
+          {
+            "weakness_id": 1,
+            "weakness_text": "The manuscript is incomplete: abstract and main text cut off abruptly, omitting conclusion, discussion of limitations, implications, results section, figures, tables, and full references.",
+            "source_reviewer": "Methodology",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "Restore the full manuscript: include complete Introduction, Methods (with subsections for participants, design, materials, procedure, instruments, analysis), Results (with descriptive statistics, inferential tests, effect sizes, confidence intervals, and at minimum one conceptual gain figure/table), Discussion (addressing limitations, theoretical/practical implications, alignment with prior literature), Conclusion, and properly compiled reference list. All sections must be present and self-contained.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — without a complete Methods and Results section, no methodological or statistical claim can be assessed.",
+              "Experiments": "agree — experimental rigor hinges on transparent reporting of design, measures, and outcomes; truncation renders the study unreproducible and unverifiable.",
+              "Literature": "agree — incompleteness invalidates engagement with cited work, prevents contextualization of contributions, and undermines scholarly accountability."
+            }
+          },
+          {
+            "weakness_id": 2,
+            "weakness_text": "No technical specification of the simulation is provided: missing physics model, geodesic integration method, step size, initial conditions, or interface mechanics of 'progressive layer revelation'.",
+            "source_reviewer": "Methodology",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "Add a dedicated 'Simulation Design' subsection in Methods specifying: (a) spacetime metric used (e.g., Schwarzschild, weak-field approximation); (b) numerical integration scheme (e.g., Runge-Kutta 4th order), step size, convergence criteria; (c) parameterization of light rays (affine parameter, null geodesic constraints); (d) precise definition and implementation of 'progressive layer revelation' (e.g., UI triggers, sequence of overlays, student agency controls). Include pseudocode or architecture diagram if space permits.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — reproducibility and theoretical fidelity depend on computational transparency.",
+              "Experiments": "agree — simulation details directly affect construct validity of the intervention; without them, we cannot assess whether 'scaffolding' is implemented as theorized.",
+              "Literature": "agree — proper siting of the tool within GR pedagogy requires clarity on how it models (or approximates) relativistic optics; vague descriptions risk misrepresenting physics."
+            }
+          },
+          {
+            "weakness_id": 3,
+            "weakness_text": "Empirical methods are inadequately described: no validation/reliability data for conceptual assessment; no cognitive load measurement instrument or protocol reported; statistical analyses lack assumptions, covariates, or multiple-testing corrections.",
+            "source_reviewer": "Methodology",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "In Methods: (a) name the conceptual assessment (e.g., 'Gravitational Light Deflection Inventory'), report Cronbach’s α, item-total correlations, and evidence of construct validity (e.g., factor analysis, expert review); (b) specify cognitive load instrument (e.g., Paas Mental Effort Scale), administration timing, scoring, and reliability metrics; (c) in Analysis subsection, state statistical models (e.g., ANCOVA with pretest as covariate), assumptions checked (normality, homoscedasticity, sphericity), software (e.g., R 4.3.1), packages (e.g., afex, emmeans), and correction method for multiple comparisons (e.g., Holm-Bonferroni). Report exact p-values and 95% CIs for all key effects.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — absence of psychometric and analytic transparency invalidates all quantitative claims.",
+              "Experiments": "agree — this is core experimental rigor; without it, gains and load reductions are anecdotal.",
+              "Literature": "agree — robust methodology is prerequisite for contribution to physics education research literature; otherwise, findings cannot inform practice or theory."
+            }
+          },
+          {
+            "weakness_id": 4,
+            "weakness_text": "Baseline conditions ('traditional-derivation', 'heuristic-only') are inadequately described—no detail on instructional materials, duration, instructor training, or fidelity checks.",
+            "source_reviewer": "Experiments",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "Add 'Control Conditions' subsection in Methods detailing: (a) exact content and format of traditional lesson (e.g., '12-page lecture notes derived from Hartle Ch. 8, including full tensor derivation'); (b) heuristic-only materials (e.g., '3 animated GIFs illustrating elevator analogy + 5 guided reflection prompts'); (c) session duration, scheduling, and instructor background (e.g., 'all instructors held PhD in physics education and completed 4-hr standardized training'); (d) fidelity monitoring (e.g., '10% of sessions video-recorded and coded for adherence using 12-item checklist; mean fidelity = 94%, SD = 3.2').",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — internal validity depends on equivalence and integrity of comparison conditions.",
+              "Experiments": "agree — without fidelity and material transparency, differential outcomes may reflect implementation artifacts, not pedagogical design.",
+              "Literature": "agree — fair comparison to prior approaches (e.g., Baily & Finkelstein 2015; Clement 1993) requires precise mapping of what was actually delivered."
+            }
+          },
+          {
+            "weakness_id": 5,
+            "weakness_text": "At least 6 bibliography entries contain serious factual errors (misattributed authorship, incorrect years, invalid DOIs, or non-existent articles); these must be fully audited and corrected.",
+            "source_reviewer": "Literature",
+            "validity_consensus": "valid",
+            "agreement_level": "strong_consensus",
+            "agreed_fix": "Audit every reference against original publication metadata (via DOI resolver, journal website, or Crossref API). Correct all errors: authors, year, title, journal, volume, issue, pages, and DOI. Remove entries with no verifiable source (e.g., 'heuristic_ref' has no real publication; 'clement_bridging_1993' cites 2018 year but article appeared in 1993 — verify actual source and cite correctly). Provide a validation log (supplemental) listing each entry, its original erroneous form, corrected form, and verification source URL/DOI.",
+            "priority": "high",
+            "reviewer_positions": {
+              "Methodology": "agree — citation integrity is foundational to scholarly trust; erroneous references undermine credibility of literature grounding.",
+              "Experiments": "agree — inaccurate citations impede replication and meta-analytic synthesis; readers cannot locate claimed prior work.",
+              "Literature": "agree — this is a basic scholarly norm; errors suggest insufficient engagement with cited scholarship, weakening theoretical framing."
+            }
+          }
+        ],
+        "disputed_points": [],
+        "overall_assessment": {
+          "paper_ready": false,
+          "remaining_major_issues": 5,
+          "recommendation": "reject"
+        }
+      },
+      "phase3_votes": [],
+      "phase4_applied": {
+        "total": 5,
+        "strong_consensus": 5,
+        "weak_consensus": 0,
+        "voting": 0,
+        "high_priority": 5
+      },
+      "applied": [
+        {
+          "text": "Restore the full manuscript: include complete Introduction, Methods (with subsections for participants, design, materials, procedure, instruments, analysis), Results (with descriptive statistics, inferential tests, effect sizes, confidence intervals, and at minimum one conceptual gain figure/table), Discussion (addressing limitations, theoretical/practical implications, alignment with prior literature), Conclusion, and properly compiled reference list. All sections must be present and self-contained.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "Add a dedicated 'Simulation Design' subsection in Methods specifying: (a) spacetime metric used (e.g., Schwarzschild, weak-field approximation); (b) numerical integration scheme (e.g., Runge-Kutta 4th order), step size, convergence criteria; (c) parameterization of light rays (affine parameter, null geodesic constraints); (d) precise definition and implementation of 'progressive layer revelation' (e.g., UI triggers, sequence of overlays, student agency controls). Include pseudocode or architecture diagram if space permits.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "In Methods: (a) name the conceptual assessment (e.g., 'Gravitational Light Deflection Inventory'), report Cronbach’s α, item-total correlations, and evidence of construct validity (e.g., factor analysis, expert review); (b) specify cognitive load instrument (e.g., Paas Mental Effort Scale), administration timing, scoring, and reliability metrics; (c) in Analysis subsection, state statistical models (e.g., ANCOVA with pretest as covariate), assumptions checked (normality, homoscedasticity, sphericity), software (e.g., R 4.3.1), packages (e.g., afex, emmeans), and correction method for multiple comparisons (e.g., Holm-Bonferroni). Report exact p-values and 95% CIs for all key effects.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "Add 'Control Conditions' subsection in Methods detailing: (a) exact content and format of traditional lesson (e.g., '12-page lecture notes derived from Hartle Ch. 8, including full tensor derivation'); (b) heuristic-only materials (e.g., '3 animated GIFs illustrating elevator analogy + 5 guided reflection prompts'); (c) session duration, scheduling, and instructor background (e.g., 'all instructors held PhD in physics education and completed 4-hr standardized training'); (d) fidelity monitoring (e.g., '10% of sessions video-recorded and coded for adherence using 12-item checklist; mean fidelity = 94%, SD = 3.2').",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        },
+        {
+          "text": "Audit every reference against original publication metadata (via DOI resolver, journal website, or Crossref API). Correct all errors: authors, year, title, journal, volume, issue, pages, and DOI. Remove entries with no verifiable source (e.g., 'heuristic_ref' has no real publication; 'clement_bridging_1993' cites 2018 year but article appeared in 1993 — verify actual source and cite correctly). Provide a validation log (supplemental) listing each entry, its original erroneous form, corrected form, and verification source URL/DOI.",
+          "priority": "high",
+          "agreement": "strong_consensus"
+        }
+      ],
+      "success": false
+    }
+  ]
+}

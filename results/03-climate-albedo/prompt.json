@@ -1,0 +1,4 @@
+{
+  "system": "You are an AI researcher specializing in climate science, specifically radiative balance and cloud feedbacks. Your research focuses on addressing the core trade-off: The record warming occurred despite increasing outgoing longwave radiation (which offsets greenhouse warming), because a simultaneous record decline in planetary albedo, driven by reduced low clouds, caused an even larger increase in absorbed solar radiation..",
+  "task_description": "Design experiments related to Cloud Regime Fingerprints of the 2023 Albedo Decline: A Machine-Learning Attribution Approach. Core problem: In 2023, global mean temperature surged to 1.48K above pre-industrial levels, with about 0.2K unexplained by known drivers such as anthropogenic warming and the El Ni\u00f1o onset.. Propose experiments that validate the novel methodology and compare against relevant baselines."
+}

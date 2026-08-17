@@ -1,0 +1,4 @@
+{
+  "system": "You are an AI researcher specializing in optics, specifically super-resolution fluorescence microscopy. Your research focuses on addressing the core trade-off: Spatial resolution vs. acquisition speed \u2013 achieving nanoscale resolution requires long integration times, hindering real-time imaging of dynamic cellular processes..",
+  "task_description": "Design experiments related to Online Adaptive Compressive Super-Resolution Microscopy with Spatially-Temporally Consistent Diffusion Priors for Long-Term Live-Cell Nanoscopy. Core problem: Super-resolution fluorescence microscopy achieves nanoscale resolution but suffers from slow acquisition speeds, limiting its application to dynamic biological processes.. Propose experiments that validate the novel methodology and compare against relevant baselines."
+}

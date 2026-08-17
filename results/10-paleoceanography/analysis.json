@@ -1,0 +1,28 @@
+{
+  "domain": "古海洋学 (Paleoceanography)",
+  "sub_domain": "始新世极热事件海洋脱氧 (Eocene Thermal Maximum ocean deoxygenation)",
+  "core_problem": "How did ocean oxygen levels change spatially and temporally during the Eocene Thermal Maximum, and what were the driving mechanisms and ecological consequences?",
+  "methodology_summary": "The study likely uses geochemical proxies (e.g., I/Ca, foraminiferal assemblages, biomarkers) to reconstruct oxygenation states at multiple sites, combined with age models to capture rapid changes. It may also incorporate climate model simulations to interpret proxy data in a mechanistic framework.",
+  "key_trade_off": "The trade-off between high temporal resolution at a few sites and broad spatial coverage needed to constrain global patterns, compounded by proxy calibration uncertainties and diagenetic overprints.",
+  "limitations": [
+    "Proxy records may be compromised by diagenetic alteration or low temporal resolution",
+    "Geographic coverage is biased toward continental margins and few deep-sea sites",
+    "Uncertainties in age models hinder precise correlation between sites",
+    "Quantitative oxygen thresholds derived from modern analogs may not apply to ancient systems",
+    "Lack of integration with Earth system models limits mechanistic interpretation"
+  ],
+  "future_directions": [
+    "Multi-proxy approaches with Bayesian age modeling to improve temporal precision",
+    "Targeted drilling of understudied regions (e.g., tropical Pacific, Southern Ocean)",
+    "Transient climate simulations with biogeochemical modules to test hypotheses",
+    "Development of novel proxies (e.g., lipid biomarkers, isotopes of redox-sensitive metals) for absolute oxygen quantification",
+    "Integration of macroecological and microfossil data to assess ecosystem impacts"
+  ],
+  "research_gaps": [
+    "Regional patterns of deoxygenation in the open ocean tropics remain unknown",
+    "The relative roles of warming, circulation changes, and productivity in driving oxygen loss are not disentangled",
+    "Quantitative oxygen concentration estimates are scarce due to proxy limitations"
+  ],
+  "suggested_title": "Quantifying Tropical Ocean Deoxygenation Across the Eocene Thermal Maximum: A Bayesian Multi-Proxy Synthesis",
+  "suggested_abstract": "The Eocene Thermal Maximum (ETM) was a rapid warming event ~55 Ma, linked to massive carbon release and ocean deoxygenation. Existing records are biased toward mid-latitude and continental margin sites, leaving tropical open-ocean oxygen dynamics unconstrained. This study will generate new high-resolution records from tropical Pacific sediment cores, employing paired I/Ca, foraminiferal indices, and lipid biomarkers. A Bayesian hierarchical model will integrate these proxies to produce probabilistic oxygen estimates, which will be compared with transient climate simulations. The results will test whether warming or circulation changes dominated tropical oxygen loss and improve predictions of future marine ecosystem responses."
+}

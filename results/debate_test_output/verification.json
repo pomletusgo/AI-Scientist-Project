@@ -1,0 +1,157 @@
+{
+  "references": [
+    {
+      "key": "chawla2002smote",
+      "status": "VERIFIED",
+      "reason": "Title match 100%, author confirmed",
+      "bib_title": "SMOTE: Synthetic Minority Over-sampling Technique",
+      "bib_authors": [
+        "Chawla",
+        "Nitesh V",
+        "Bowyer"
+      ],
+      "bib_year": "",
+      "bib_venue": "JAIR",
+      "openalex_title": "SMOTE: Synthetic Minority Over-sampling Technique",
+      "openalex_authors": [
+        "Nitesh V. Chawla",
+        "Kevin W. Bowyer",
+        "Lawrence Hall"
+      ],
+      "openalex_year": "2002",
+      "openalex_venue": "Journal of Artificial Intelligence Research",
+      "openalex_cited_by": 31745,
+      "title_overlap": 1.0
+    },
+    {
+      "key": "fatima2024churn",
+      "status": "LIKELY_REAL",
+      "reason": "Partial title match 88%, check manually",
+      "bib_title": "A Machine Learning Approach for Customer Churn Prediction",
+      "bib_authors": [
+        "Fatima",
+        "Umm-e-",
+        "others"
+      ],
+      "bib_year": "",
+      "bib_venue": "PeerJ Computer Science",
+      "openalex_title": "Customer churn prediction system: a machine learning approach",
+      "openalex_authors": [
+        "Praveen Lalwani",
+        "Manas Kumar Mishra",
+        "Jasroop Singh Chadha"
+      ],
+      "openalex_year": "2021",
+      "openalex_venue": "Computing",
+      "openalex_cited_by": 319,
+      "title_overlap": 0.875
+    },
+    {
+      "key": "kingma2014adam",
+      "status": "SEARCH_FAILED",
+      "reason": "Rate limited after retries",
+      "bib_title": "Adam: A Method for Stochastic Optimization"
+    },
+    {
+      "key": "lin2017focal",
+      "status": "SEARCH_FAILED",
+      "reason": "Rate limited after retries",
+      "bib_title": "Focal Loss for Dense Object Detection"
+    }
+  ],
+  "parameters": {
+    "gamma": [
+      {
+        "value": 0.5,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 1.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 3.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 0.0,
+        "verdict": "UNUSUAL",
+        "detail": "Outside typical [0.5, 5.0] but within possible [0.0, 100]"
+      },
+      {
+        "value": 0.0,
+        "verdict": "UNUSUAL",
+        "detail": "Outside typical [0.5, 5.0] but within possible [0.0, 100]"
+      },
+      {
+        "value": 0.0,
+        "verdict": "UNUSUAL",
+        "detail": "Outside typical [0.5, 5.0] but within possible [0.0, 100]"
+      },
+      {
+        "value": 0.5,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 1.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 2.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 3.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 0.5,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 1.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 1.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 1.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 3.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 0.5,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      },
+      {
+        "value": 1.0,
+        "verdict": "OK",
+        "detail": "Within typical range"
+      }
+    ]
+  },
+  "missing_bib": [],
+  "scores": {
+    "reference_score": 0.375,
+    "parameter_score": 0.824,
+    "overall_trust": 0.599
+  }
+}

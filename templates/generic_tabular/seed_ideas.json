@@ -1,0 +1,18 @@
+[
+    {
+        "Name": "adaptive_dropout_schedule",
+        "Title": "Adaptive Dropout Scheduling for Tabular Deep Learning",
+        "Experiment": "Implement a dropout schedule that adapts based on the gap between train and validation loss. When overfitting is detected (validation loss increases while training loss decreases), increase dropout rate. Modify the MLP class to support per-layer dropout rates that are updated at each validation checkpoint.",
+        "Interestingness": 6,
+        "Feasibility": 8,
+        "Novelty": 5
+    },
+    {
+        "Name": "residual_tabular_mlp",
+        "Title": "Residual Connections with Layer Normalization for Tabular Neural Networks",
+        "Experiment": "Add residual connections between consecutive hidden layers of the MLP, combined with layer normalization. Compare with baseline MLP on multiple metrics: convergence speed, final accuracy, and robustness to different weight initializations. Modify the forward pass to include skip connections.",
+        "Interestingness": 6,
+        "Feasibility": 9,
+        "Novelty": 4
+    }
+]

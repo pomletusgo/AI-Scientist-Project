@@ -1,0 +1,38 @@
+[
+    {
+        "Name": "focal_loss_churn",
+        "Title": "Focal Loss for Imbalanced Customer Churn Prediction",
+        "Experiment": "Replace the standard cross-entropy loss with focal loss to address class imbalance (27% churn vs 73% non-churn). Focal loss down-weights easy examples and focuses training on hard-to-classify samples. Implement focal loss with tunable gamma parameter, compare gamma=0, 0.5, 1.0, 2.0, 3.0 against baseline cross-entropy and weighted cross-entropy. Evaluate using accuracy, precision, recall, F1-score, and AUC-ROC on the test set.",
+        "Interestingness": 7,
+        "Feasibility": 9,
+        "Novelty": 5,
+        "novel": true
+    },
+    {
+        "Name": "contract_aware_embedding",
+        "Title": "Learned Contract-Type Embeddings for Churn-Sensitive Feature Interaction",
+        "Experiment": "Add an embedding layer for categorical features (Contract type, InternetService, PaymentMethod) and concatenate embeddings with numerical features before the MLP. Compare with one-hot encoded baseline. The hypothesis is that learned embeddings capture latent relationships between contract type and churn behavior better than one-hot encoding. Measure improvement in F1-score for the minority (churn) class.",
+        "Interestingness": 6,
+        "Feasibility": 8,
+        "Novelty": 6,
+        "novel": true
+    },
+    {
+        "Name": "sparse_feature_gating_churn",
+        "Title": "Instance\u2011Wise Sparse Feature Gating with Focal Loss for Interpretable Churn Prediction",
+        "Experiment": "1. Add a FeatureGating module: Linear(n_features, n_features) \u2192 Sigmoid. Element\u2011wise multiply gating weights with input. 2. Add L1 sparsity penalty on the gating weights (lambda * sum of weights). Total loss = cross\u2011entropy + sparsity_loss, with lambda adjustable. 3. Implement focal loss as alternative to cross\u2011entropy. 4. Train variants: (a) baseline MLP with CE, (b) MLP + Gating + CE, (c) MLP + Gating + CE + sparsity (lambda=0.001, tuned), (d) MLP + Focal, (e) MLP + Gating + Focal, (f) MLP + Gating + Focal + sparsity. Also include a weighted CE variant. 5. Evaluate accuracy, precision, recall, F1, AUC\u2011ROC. 6. Extract per\u2011instance gating weights; aggregate by churn status to rank feature importance. Visualize top features and interpret for business insights. 7. Minimal code changes: new model class, loss wrapper, and attention\u2011extraction in evaluation.",
+        "Interestingness": 9,
+        "Feasibility": 10,
+        "Novelty": 8,
+        "novel": true
+    },
+    {
+        "Name": "contrastive_masked_pretraining_churn",
+        "Title": "Contrastive Self\u2011Supervised Pre\u2011Training with Masking Augmentations and Focal Loss Fine\u2011Tuning for Interpretable Churn Prediction",
+        "Experiment": "1. Extend the MLP to return the encoder\u2019s final hidden layer and add a small projection head (e.g., Linear(64, 32)) for contrastive learning. 2. Pre\u2011training: For each mini\u2011batch, create two masked views per sample (each retains a random 70% of features, the rest zeroed). Pass through encoder + projection head to obtain embeddings. Apply SimCLR\u2011style NT\u2011Xent loss (cosine similarity with temperature) contrasting all pairs in the batch. Pre\u2011train for 50\u2013100 epochs on the full training set (labels ignored). Save the encoder weights. 3. Fine\u2011tuning: Remove the projection head, attach a fresh classification head. Train with Focal Loss (gamma=2.0) on the churn labels. Optionally freeze early encoder layers or use a smaller learning rate. 4. Baselines: (a) standard MLP + Cross\u2011Entropy, (b) MLP + Focal Loss, (c) MLP + Weighted CE, (d) Masked Feature Reconstruction Pre\u2011training + CE, (e) Masked Reconstruction + Focal. 5. Evaluation: Accuracy, precision, recall (especially for churn), F1, AUC\u2011ROC on test set. 6. Interpretability: Use SHAP (KernelExplainer or GradientExplainer) on the fine\u2011tuned model to compute global feature importance and per\u2011instance explanations. Visualise top features and analyse patterns for business retention insights (e.g., which service attributes most drive high churn risk). 7. Code additions: a `ContrastiveMLP` class, a pre\u2011training loop with masking and loss, a custom dataset that applies random masks on\u2011the\u2011fly, SHAP integration for explanation plots.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8,
+        "novel": true
+    }
+]

@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\usepackage{times}\usepackage{graphicx}\usepackage{amsmath,amssymb}
+\usepackage{hyperref}\usepackage{url}\usepackage{booktabs}\usepackage{caption}\usepackage{float}\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\setlength{\emergencystretch}{2em}
+\sloppy
+\graphicspath{{}}
+
+\begin{filecontents}{references.bib}
+@article{he2016deep,
+  title={Deep Residual Learning for Image Recognition},
+  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  journal={CVPR},
+  year={2016}
+}
+@article{srivastava2014dropout,
+  title={Dropout: A Simple Way to Prevent Neural Networks from Overfitting},
+  author={Srivastava, Nitish and Hinton, Geoffrey and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan},
+  journal={JMLR},
+  volume={15},
+  year={2014}
+}
+@article{kingma2014adam,
+  title={Adam: A Method for Stochastic Optimization},
+  author={Kingma, Diederik P and Ba, Jimmy},
+  journal={arXiv:1412.6980},
+  year={2014}
+}
+@article{loshchilov2017adamw,
+  title={Decoupled Weight Decay Regularization},
+  author={Loshchilov, Ilya and Hutter, Frank},
+  journal={arXiv:1711.05101},
+  year={2017}
+}
+@article{paszke2019pytorch,
+  title={PyTorch: An Imperative Style High-Performance Deep Learning Library},
+  author={Paszke, Adam and Gross, Sam and Massa, Francisco and Lerer, Adam and Bradbury, James and Chanan, Gregory and Killeen, Trevor and Lin, Zeming and Gimelshein, Natalia and Antiga, Luca and others},
+  journal={NeurIPS},
+  year={2019}
+}
+\end{filecontents}
+
+\begin{document}
+
+\title{IMPROVING TABULAR DEEP LEARNING: A STUDY OF ARCHITECTURAL AND REGULARIZATION TECHNIQUES}
+
+\author{AI Scientist \\ Automated Research Pipeline}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+ABSTRACT HERE
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+INTRODUCTION HERE
+
+\section{Related Work}
+\label{sec:related}
+RELATED WORK HERE
+
+\section{Method}
+\label{sec:method}
+METHOD HERE
+
+\section{Experimental Setup}
+\label{sec:setup}
+EXPERIMENTAL SETUP HERE
+
+\section{Results}
+\label{sec:results}
+RESULTS HERE
+
+\section{Discussion}
+\label{sec:discussion}
+DISCUSSION HERE
+
+\section{Conclusion}
+\label{sec:conclusion}
+CONCLUSION HERE
+
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

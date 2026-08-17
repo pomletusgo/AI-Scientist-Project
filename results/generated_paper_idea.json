@@ -1,0 +1,39 @@
+{
+    "idea": {
+        "Name": "Word-Aware Memory Transformer (WAMT)",
+        "Title": "Word-Aware Memory Transformers: Enhancing Character-Level Language Models with In-Context Word Summarization",
+        "Experiment": "We propose to augment the standard NanoGPT character-level transformer with a lightweight hierarchical memory module that mimics the human ability to chunk characters into words without explicit tokenization. The key idea is to segment the input stream into variable-length chunks (e.g., using whitespace/punctuation boundaries) and maintain a fixed-size short\u2011term memory of summarised past chunks. Inside each transformer layer, we add a cross\u2011attention sub\u2011layer that allows every position to attend to the memory slots, providing direct access to distant context beyond the local attention window. Concretely, after processing a chunk, we compute a summary vector (e.g., the average of the hidden states of its tokens, optionally projected through a small MLP) and push it into a FIFO memory of size M (e.g., M=128). For each subsequent position, the self\u2011attention block is modified: outputs from causal self\u2011attention are concatenated with the result of attending to the memory (using standard key\u2011value projections from the memory slots, query from the current hidden state), then fed through the residual connection and feed\u2011forward network. The memory is stored at the layer level, so every layer has its own set of chunk summaries. During training, we reset memory at document boundaries. We compare WAMT against the baseline NanoGPT on multiple character\u2011level text corpora (e.g., enwik8, text8, tinyShakespeare). Evaluation metrics include character\u2011level perplexity, BPC, and targeted long\u2011range dependency tasks such as bracket matching or copying a sequence over a long delay. We also perform qualitative analysis of generation samples to see if WAMT reduces character\u2011level errors that arise from forgetting distant context (e.g., forgetting the opening bracket type). To implement, we modify model.py\u2019s CausalSelfAttention to accept an optional memory argument, and in the forward pass iterate through chunks, updating the memory after each chunk. The chunking is done on\u2011the\u2011fly using a simple rule based on whitespace; during training, chunk boundaries can be varied from the original stream to improve robustness. This is feasible to implement within the given experiment.py framework, as it only requires extending the attention mechanism and adding a memory buffer, without changing the overall training loop.",
+        "Interestingness": 8,
+        "Feasibility": 9,
+        "Novelty": 7
+    },
+    "mock_results": {
+        "baseline": {
+            "train_loss": 2.375,
+            "val_loss": 2.673,
+            "test_loss": 2.742,
+            "perplexity": 15.78,
+            "train_time_s": 1847
+        },
+        "proposed": {
+            "train_loss": 2.068,
+            "val_loss": 2.398,
+            "test_loss": 2.519,
+            "perplexity": 11.85,
+            "train_time_s": 1923,
+            "improvement_pct": 8.1,
+            "ppl_improvement_pct": 24.9,
+            "p_value": 0.003
+        },
+        "ablation_1": {
+            "desc": "Without component A",
+            "test_loss": 2.557,
+            "perplexity": 13.48
+        },
+        "ablation_2": {
+            "desc": "With alternative design B",
+            "test_loss": 2.507,
+            "perplexity": 12.32
+        }
+    }
+}

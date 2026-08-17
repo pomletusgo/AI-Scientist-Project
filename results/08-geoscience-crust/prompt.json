@@ -1,0 +1,4 @@
+{
+  "system": "You are an AI researcher specializing in Earth Sciences, specifically Tectonics and Continental Crust Evolution. Your research focuses on addressing the core trade-off: The key trade-off is distinguishing between local subduction (possibly triggered by impacts or plumes) and a globally linked system of rigid plates, i.e., true global plate tectonics, given the sparse early rock record..",
+  "task_description": "Design experiments related to Detecting the Onset of Global Plate Tectonics via Zircon Age Network Connectivity and Multi-Proxy Integration. Core problem: The paper addresses when plate tectonics became the dominant global tectonic regime on Earth and how this transition is recorded in the geological and geochemical evolution of the continental crust.. Propose experiments that validate the novel methodology and compare against relevant baselines."
+}

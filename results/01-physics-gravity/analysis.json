@@ -1,0 +1,28 @@
+{
+  "domain": "Physics Education",
+  "sub_domain": "General Relativity Education / Gravitational Light Deflection",
+  "core_problem": "How to enable undergraduate students who have not learned general relativity to quantitatively derive the observed 1.75 arcsec gravitational deflection of light around the Sun without solving the full geodesic equation.",
+  "methodology_summary": "The paper proposes a heuristic derivation that focuses on the acceleration term of null geodesics rather than directly solving the geodesic equation. It reviews Newtonian and early Einstein approaches, then computes the deflection angle by approximating the change in velocity from the acceleration term. The method aims to be accessible to undergraduates while still yielding the correct general relativistic value.",
+  "key_trade_off": "Balancing conceptual accessibility for students without a general relativity background against the mathematical rigor and correctness of the full general relativistic calculation; previous simplified approaches either require complex formalisms or yield only half the observed deflection.",
+  "limitations": [
+    "Heuristic and approximate; not a substitute for a rigorous general relativistic derivation.",
+    "Limited to the weak-field, small-angle regime near the Sun; may not generalize to strong gravity or compact objects.",
+    "Lacks empirical validation or assessment of student learning outcomes.",
+    "May still rely on non-trivial concepts such as null geodesics and acceleration terms that can confuse undergraduates.",
+    "Does not fully bridge the gap to standard GR formalism such as metric tensors and Christoffel symbols for students later taking advanced courses."
+  ],
+  "future_directions": [
+    "Develop and assess a full instructional module based on this heuristic derivation in undergraduate classrooms.",
+    "Extend the heuristic approach to other gravitational lensing regimes or compact objects such as neutron stars and black holes.",
+    "Compare learning outcomes of the heuristic derivation versus traditional metric/geodesic instruction.",
+    "Incorporate numerical simulations or interactive visualizations to support the derivation.",
+    "Expand the method to other classical tests of general relativity, such as perihelion precession or gravitational redshift."
+  ],
+  "research_gaps": [
+    "No empirical study of whether the proposed heuristic derivation improves conceptual understanding or retention.",
+    "The derivation is not connected to a progression toward full GR formalism, leaving a gap in advanced courses.",
+    "The method's applicability and accuracy in non-solar or strong-field scenarios are not addressed."
+  ],
+  "suggested_title": "From Heuristic to Geodesic: A Learning Progression for Undergraduate Gravitational Light Deflection",
+  "suggested_abstract": "We propose a follow-up study that develops and empirically evaluates a scaffolded instructional sequence for gravitational deflection of light, beginning with the heuristic acceleration-term derivation and progressing to the full geodesic equation. The intervention targets undergraduate physics majors and measures conceptual understanding, quantitative problem-solving, and readiness for advanced general relativity. Results will identify where simplified heuristic reasoning supports or hinders later formal learning, and provide evidence-based guidance for integrating modern gravitational lensing topics into the undergraduate curriculum."
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "Name": "safety_representation_control",
+        "Title": "Representation Engineering for LLM Safety Alignment",
+        "Experiment": "Modify the model to add a safety projection layer that maps hidden states to a safety subspace. Train with contrastive loss to separate safe versus unsafe representations. Measure safety-utility tradeoff.",
+        "Interestingness": 8,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "reward_model_ensemble",
+        "Title": "Ensemble Reward Modeling for Robust RLHF",
+        "Experiment": "Train multiple reward models with different initializations. Use ensemble disagreement as uncertainty signal to detect reward hacking. Compare with single reward model baseline on safety benchmarks.",
+        "Interestingness": 7,
+        "Feasibility": 8,
+        "Novelty": 7
+    },
+    {
+        "Name": "adversarial_red_teaming",
+        "Title": "Multi-Agent Red Teaming for Automated Safety Evaluation",
+        "Experiment": "Deploy multiple LLM agents as adversarial testers. Each agent specializes in different attack strategies (semantic manipulation, syntactic obfuscation, multi-turn escalation). Evaluate model robustness.",
+        "Interestingness": 9,
+        "Feasibility": 6,
+        "Novelty": 9
+    }
+]

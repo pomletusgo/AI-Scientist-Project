@@ -1,0 +1,35 @@
+# Title: Focal Loss for Imbalanced Customer Churn Prediction
+# Experiment description: Replace the standard cross-entropy loss with focal loss to address class imbalance (27% churn vs 73% non-churn). Focal loss down-weights easy examples and focuses training on hard-to-classify samples. Implement focal loss with tunable gamma parameter, compare gamma=0, 0.5, 1.0, 2.0, 3.0 against baseline cross-entropy and weighted cross-entropy. Evaluate using accuracy, precision, recall, F1-score, and AUC-ROC on the test set.
+## Run 0: Baseline
+Results: {'data': {'best_val_loss_mean': 0.4031, 'final_train_loss_mean': 0.3658, 'total_train_time_mean': 13.0, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Baseline results.
+
+## Run 1: Weighted Cross‑Entropy
+Results: {'data': {'best_val_loss_mean': 0.4705, 'final_train_loss_mean': 0.4052, 'total_train_time_mean': 20.1, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Weighted cross‑entropy with class weights inversely proportional to class frequencies (standard approach for imbalance).  Validation loss increased by 0.0674 compared to baseline, indicating that simple reweighting may not be sufficient for this dataset.
+
+## Run 2: Focal Loss (γ=2)
+Results: {'data': {'best_val_loss_mean': 0.1054, 'final_train_loss_mean': 0.0858, 'total_train_time_mean': 18.6, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Focal loss with γ=2 (no class weights). Significantly reduced validation loss compared to baseline (0.1054 vs 0.4031) and weighted CE, demonstrating the effectiveness of down-weighting easy examples for this imbalanced dataset.
+
+## Run 3: Focal Loss (γ=3)
+Results: {'data': {'best_val_loss_mean': 0.0526, 'final_train_loss_mean': 0.0464, 'total_train_time_mean': 14.9, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Focal loss with γ=3 (no class weights). Even larger validation loss reduction (0.0526 vs baseline 0.4031), showing that stronger focusing helps for this highly imbalanced classification problem.
+
+## Run 4: Focal Loss (γ=1)
+Results: {'data': {'best_val_loss_mean': 0.2024, 'final_train_loss_mean': 0.1782, 'total_train_time_mean': 15.7, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Focal loss with γ=1 (no class weights). Validation loss 0.2024, a substantial improvement over baseline (0.4031) and weighted CE, though slightly higher than γ=2 and γ=3, indicating that moderate focusing helps but stronger focusing leads to lower validation loss for this imbalanced dataset.
+
+## Plot descriptions
+
+- `best_val_loss.png` : Bar chart comparing the best validation loss (lower is better) across all configurations: Baseline, Weighted CE, Focal (γ=0.5), Focal (γ=1.0), Focal (γ=2.0), and Focal (γ=3.0). This chart highlights the dramatic loss reduction achieved by the focal loss family compared to standard cross-entropy.
+
+- `accuracy.png` : Bar chart of test‑set accuracy. While accuracy is a straightforward metric, it can be misleading under high class imbalance (73% non‑churn vs 27% churn). This chart provides a reference for overall correctness but should be interpreted together with the other metrics.
+
+- `precision.png` : Bar chart of test‑set precision for the churn (positive) class. High precision means that when the model predicts churn, it is likely correct, i.e., few non‑churn customers are misclassified as churners.
+
+- `recall.png` : Bar chart of test‑set recall for the churn (positive) class. High recall indicates the model captures a large fraction of the actual churners, which is often the more important goal in churn prediction scenarios.
+
+- `f1_score.png` : Bar chart of the test‑set F1 score, the harmonic mean of precision and recall. This single metric balances the precision‑recall trade‑off and is especially informative for imbalanced classification problems.
+
+- `auc_roc.png` : Bar chart of the Area Under the Receiver Operating Characteristic curve (AUC‑ROC). AUC‑ROC is a threshold‑independent measure of how well the model separates churn from non‑churn customers; higher values denote better discrimination.

@@ -1,0 +1,9 @@
+FATAL: 'DEEPSEEK_API_KEY'
+Traceback (most recent call last):
+  File "D:\AI-Scientist\run_paper_pipeline.py", line 835, in main
+    client, client_model = create_client(args.model)
+  File "D:\AI-Scientist\ai_scientist\llm.py", line 483, in create_client
+    api_key=os.environ["DEEPSEEK_API_KEY"],
+  File "C:\Users\liuru\AppData\Local\Programs\Python\Python310\lib\os.py", line 680, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'DEEPSEEK_API_KEY'

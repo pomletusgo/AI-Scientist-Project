@@ -1,0 +1,18 @@
+[
+    {
+        "Name": "focal_loss_churn",
+        "Title": "Focal Loss for Imbalanced Customer Churn Prediction",
+        "Experiment": "Replace the standard cross-entropy loss with focal loss to address class imbalance (27% churn vs 73% non-churn). Focal loss down-weights easy examples and focuses training on hard-to-classify samples. Implement focal loss with tunable gamma parameter, compare gamma=0, 0.5, 1.0, 2.0, 3.0 against baseline cross-entropy and weighted cross-entropy. Evaluate using accuracy, precision, recall, F1-score, and AUC-ROC on the test set.",
+        "Interestingness": 7,
+        "Feasibility": 9,
+        "Novelty": 5
+    },
+    {
+        "Name": "contract_aware_embedding",
+        "Title": "Learned Contract-Type Embeddings for Churn-Sensitive Feature Interaction",
+        "Experiment": "Add an embedding layer for categorical features (Contract type, InternetService, PaymentMethod) and concatenate embeddings with numerical features before the MLP. Compare with one-hot encoded baseline. The hypothesis is that learned embeddings capture latent relationships between contract type and churn behavior better than one-hot encoding. Measure improvement in F1-score for the minority (churn) class.",
+        "Interestingness": 6,
+        "Feasibility": 8,
+        "Novelty": 6
+    }
+]

@@ -1,0 +1,335 @@
+{
+  "folder": "results/telco_churn/20260803_125108_focal_loss_churn",
+  "started_at": "2026-08-03T13:42:33.391014",
+  "rounds": 2,
+  "converged": false,
+  "rounds_detail": [
+    {
+      "round": 1,
+      "reviews": {
+        "Methodology": {
+          "Summary": "The paper applies focal loss to customer churn prediction in telecommunications to address class imbalance. It evaluates focal loss with gamma values of 0.5, 1.0, 2.0, 3.0 against a cross-entropy baseline using a three-layer MLP. The authors report a significant drop in validation loss and improved classification metrics at certain gamma values, concluding that focal loss is a simple and effective remedy.",
+          "Strengths": [
+            "The problem of class imbalance in churn prediction is well-motivated and practically relevant.",
+            "The experiments explore multiple focusing parameter (gamma) values, providing some sensitivity insights.",
+            "The approach is simple to implement and adds negligible computational overhead."
+          ],
+          "Weaknesses": [
+            "The comparison of validation loss values across different loss functions (cross-entropy vs. focal loss variants) is fundamentally flawed. Focal loss scales losses differently; a lower numerical value does not indicate better classification performance. The claim of a monotonic decrease in validation loss is misleading and invalid.",
+            "The paper does not report classification metrics (accuracy, precision, recall, F1, AUC-ROC) for the cross-entropy baseline. Without these, the reader cannot assess whether focal loss actually improves over the standard approach, undermining the entire comparison.",
+            "The experimental methodology lacks essential details: dataset size, number of features, preprocessing steps, train/validation/test split ratios, the specific architecture (hidden layer sizes, dropout rate), learning rate schedule, and early stopping patience. No measure of variability (e.g., standard deviations from multiple runs) is provided, making the results unreproducible and unconvincing.",
+            "The paper does not compare focal loss against other common remedies for class imbalance (e.g., weighted cross-entropy, SMOTE, oversampling), which weakens the claim that focal loss is an effective solution and makes it impossible to judge its relative merit.",
+            "Using validation loss for early stopping across loss functions with different scales is problematic if one intends to compare convergence behavior, and the timing methodology (hardware, number of runs) is not described."
+          ],
+          "Originality": 1,
+          "Quality": 2,
+          "Clarity": 2,
+          "Significance": 2,
+          "Overall": 3,
+          "Decision": "Reject"
+        },
+        "Experiments": {
+          "Summary": "The paper proposes using focal loss instead of cross-entropy for imbalanced telecom churn prediction. Experiments with different γ values on one dataset are compared against a cross-entropy baseline, reporting lower validation loss, higher accuracy, F1, AUC, and comparable training time. The authors claim focal loss is an effective, low-overhead remedy for class imbalance in this domain.",
+          "Strengths": [
+            "Clear motivation and straightforward adaptation of focal loss to tabular churn data.",
+            "Multiple γ values are evaluated and several classification metrics are reported."
+          ],
+          "Weaknesses": [
+            "Validation loss is reported using different loss functions (cross‑entropy vs. focal loss). The claimed drop from 0.4031 to 0.0529 is meaningless because the loss scale differs inherently; this invalidates the comparison and any conclusion based on it. Model selection should use a single, consistent metric (e.g., AUC or F1 on a held‑out set).",
+            "No comparison with standard class‑imbalance baselines (class weighting, SMOTE, random undersampling, cost‑sensitive learning) is performed. Without these, the paper cannot demonstrate that focal loss is superior or even competitive.",
+            "No statistical significance measures (standard deviations, confidence intervals, multiple runs) are reported. All results are single‑point estimates, making it impossible to assess reliability or rule out cherry‑picking.",
+            "Experimental setup lacks basic details: dataset size, feature count, train/val/test split ratios, dropout rate, learning rate, batch size, early‑stopping patience, and number of epochs. Reproducibility is severely compromised.",
+            "Only one dataset is used; generalization claims are unsupported. A minimal robustness study would require evaluation on additional churn or imbalanced tabular datasets.",
+            "The 'monotonic decrease in validation loss' is an artifact of the focal loss scaling, not a measure of improved generalization. Ablation studies should instead focus on metrics that truly reflect model quality (e.g., recall, precision‑recall AUC) under a consistent evaluation criterion."
+          ],
+          "Originality": 2,
+          "Quality": 1,
+          "Clarity": 2,
+          "Significance": 1,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Literature": {
+          "Summary": "This paper proposes using focal loss instead of standard cross-entropy for imbalanced customer churn prediction in telecommunications. The authors experiment with four gamma values on a real dataset, reporting lower validation loss and improved classification metrics. The manuscript is incomplete (the background section ends mid-sentence) and contains significant methodological and literature gaps.",
+          "Strengths": [
+            "The writing style is generally clear and well-structured in the sections that are present.",
+            "The problem addressed is practical and relevant, and the experimental setup (varying gamma) is straightforward and potentially reproducible."
+          ],
+          "Weaknesses": [
+            "The paper is incomplete: the Background section suddenly stops mid-sentence, leaving vital parts (e.g., formal problem statement, focal loss definition, full experimental setup, results) missing. This prevents any meaningful evaluation and severely damages clarity.",
+            "The citation of He et al. (2016) on Deep Residual Learning is irrelevant to the three-hidden-layer MLP used. Unless justified, this citation is inaccurate and must be removed or replaced with a reference that actually relates to the model or method.",
+            "Related work on focal loss applications beyond object detection is not discussed. There is no mention of prior work applying focal loss to tabular data or churn prediction, which makes the claimed contribution appear overinflated and lacks fair comparison.",
+            "The comparison of validation losses between cross-entropy and focal loss is fundamentally flawed. The reported drop from 0.4031 to 0.0529 is misleading because the loss functions are on different scales; the paper does not clarify what validation loss metric is used or why such a comparison is meaningful. This is a critical methodological oversight that undermines the results.",
+            "The claim of a “monotonic decrease in validation loss” with gamma is based on only four discrete values and the problematic loss comparison; this is an overstatement without rigorous justification."
+          ],
+          "Originality": 2,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 2,
+          "Overall": 2,
+          "Decision": "Reject"
+        }
+      },
+      "decisions": [
+        {
+          "weakness_id": 1,
+          "weakness_summary": "The comparison of validation loss values across different loss functions (cross-",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 2,
+          "weakness_summary": "The paper does not report classification metrics (accuracy, precision, recall, F",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 3,
+          "weakness_summary": "The experimental methodology lacks essential details: dataset size, number of fe",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 4,
+          "weakness_summary": "The paper does not compare focal loss against other common remedies for class im",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 5,
+          "weakness_summary": "Using validation loss for early stopping across loss functions with different sc",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 6,
+          "weakness_summary": "Validation loss is reported using different loss functions (cross‑entropy vs. fo",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 7,
+          "weakness_summary": "No comparison with standard class‑imbalance baselines (class weighting, SMOTE, r",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 8,
+          "weakness_summary": "No statistical significance measures (standard deviations, confidence intervals,",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 9,
+          "weakness_summary": "Experimental setup lacks basic details: dataset size, feature count, train/val/t",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 10,
+          "weakness_summary": "Only one dataset is used; generalization claims are unsupported. A minimal robus",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 11,
+          "weakness_summary": "The 'monotonic decrease in validation loss' is an artifact of the focal loss sca",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 12,
+          "weakness_summary": "The paper is incomplete: the Background section suddenly stops mid-sentence, lea",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 13,
+          "weakness_summary": "The citation of He et al. (2016) on Deep Residual Learning is irrelevant to the ",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 14,
+          "weakness_summary": "Related work on focal loss applications beyond object detection is not discussed",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 15,
+          "weakness_summary": "The comparison of validation losses between cross-entropy and focal loss is fund",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 16,
+          "weakness_summary": "The claim of a “monotonic decrease in validation loss” with gamma is based on on",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        }
+      ],
+      "accepted": 16,
+      "rejected": 0
+    },
+    {
+      "round": 2,
+      "reviews": {
+        "Methodology": {
+          "Summary": "The paper applies focal loss with varying focusing parameters (gamma) to a telecom customer churn prediction task that exhibits class imbalance. An MLP with three hidden layers, ReLU, dropout, early stopping, and AdamW is used. Evaluation metrics (accuracy, precision, recall, F1, AUC-ROC) are reported for the focal loss variants, but the standard cross-entropy baseline was not instrumented to collect test metrics, so no baseline comparison exists. The paper notes this limitation and defers a proper comparison to future work. Additional issues include single-run results, lack of cross-validation, and an incomplete manuscript.",
+          "Strengths": [
+            "The problem statement and motivation for addressing class imbalance in churn prediction are clear.",
+            "The experimental setup (model architecture, optimizer, dropout, early stopping) is described in sufficient detail to be reproducible in principle.",
+            "Training times are reported, demonstrating low computational cost."
+          ],
+          "Weaknesses": [
+            "The central claim—that focal loss improves performance over standard cross-entropy—cannot be evaluated because the baseline run (run 0) omitted classification metrics; no head-to-head comparison is possible. This makes the study fundamentally incomplete and its conclusions unsupported.",
+            "All metrics are derived from a single training run per gamma value. There is no cross-validation, no standard deviation of metrics, and no statistical testing, so the reported numbers lack reliability and cannot assess variability.",
+            "The early stopping criterion is defined as minimizing the focal (training) loss, not a validation metric. This risks overfitting and invalidates the test set results; the paper does not mention any validation split.",
+            "The manuscript is truncated mid-sentence in the Background section, preventing a full evaluation of the literature review, problem formalization, and planned experiments.",
+            "The approach is a straightforward application of an existing loss function to a new domain; there is no methodological novelty, no ablation studies, and no analysis of why focal loss might interact with tabular data or churn-specific features."
+          ],
+          "Originality": 1,
+          "Quality": 1,
+          "Clarity": 1,
+          "Significance": 1,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Experiments": {
+          "Summary": "This paper applies the focal loss with varying gamma values (0.5, 1.0, 2.0, 3.0) to a binary telecom churn prediction task. A simple MLP with three hidden layers is trained, and point estimates of test‑set accuracy, precision, recall, F1, and AUC‑ROC are reported for each gamma. The cross‑entropy baseline is missing due to an alleged script error, so no comparison is possible. The main message is an observed trade‑off between precision and recall with increasing gamma, and the claim that focal loss is practical because training completes in under 20 seconds.",
+          "Strengths": [
+            "The problem (class‑imbalanced churn prediction) is practically relevant, and focal loss is a plausible technique.",
+            "A range of gamma values is explored, and multiple classification metrics (precision, recall, F1, AUC‑ROC) are reported."
+          ],
+          "Weaknesses": [
+            "No meaningful baseline: The cross‑entropy baseline was not instrumented to record metrics, so there is no evidence that focal loss improves over a plain cross‑entropy model. Without this comparison, the entire evaluation is uninformative. Future work is mentioned, but that does not fix the current paper.",
+            "No statistical significance: Only a single train‑test split is used, with no multiple runs, cross‑validation, or standard deviations. The results are therefore point estimates with no measure of variability or reliability.",
+            "Potential data leakage and unclear data split: The paper states that test‑set metrics are from the checkpoint that ‘minimised the focal loss (within each variant)’. It does not specify a separate validation set; if the test set was used for checkpoint selection, the metrics are optimistically biased. The exact procedure for early stopping and model selection is missing.",
+            "Incomplete ablation and missing baselines: Only gamma is varied; the alpha balancing factor of focal loss is not mentioned or tuned. Comparisons with standard imbalanced‑learning approaches (class‑weighted cross‑entropy, SMOTE, etc.) are completely absent, leaving no context for the reported numbers.",
+            "No hyperparameter justification: The choice of network architecture (256, 128, 64), dropout rate (0.2), optimizer (AdamW), and learning rate are not motivated or tuned. Their impact on the results is unknown.",
+            "Cherry‑picked training‑time comparison: The baseline’s cross‑entropy run recorded training time (13.0 s) but no metrics, while focal loss runs recorded both; this inconsistency suggests selective reporting."
+          ],
+          "Originality": 1,
+          "Quality": 1,
+          "Clarity": 2,
+          "Significance": 1,
+          "Overall": 2,
+          "Decision": "Reject"
+        },
+        "Literature": {
+          "Summary": "The paper explores the use of focal loss with various γ parameters for customer churn prediction in telecommunications, where the dataset exhibits a 27% churn minority class. The authors train a multi-layer perceptron with γ ∈ {0.5, 1.0, 2.0, 3.0} and report test-set metrics such as accuracy, precision, recall, F1, and AUC-ROC. They note that a direct comparison to standard cross-entropy is impossible because the baseline run did not record classification metrics. Training is fast (under 20 seconds). The paper discusses the inherent precision–recall trade-off and suggests future work to include proper baselines.",
+          "Strengths": [
+            "Clear problem motivation and straightforward application of focal loss to a real-world churn dataset.",
+            "Transparent reporting of metrics and training time, and an honest acknowledgment of the missing baseline (though it should have been fixed)."
+          ],
+          "Weaknesses": [
+            "Inadequate related work: only one specific churn prediction reference is cited (fatima2024). There is no discussion of prior applications of focal loss to churn or tabular data, no comparison with cost-sensitive learning, class-balanced losses, or recent oversampling methods beyond SMOTE, and no reference to broader churn prediction surveys.",
+            "Critical missing baseline: the paper admits that the standard cross-entropy run lacks test metrics, making the focal loss results uninterpretable in isolation. Presenting this limitation as a 'contribution' (bullet 3) is misleading and severely weakens the paper.",
+            "Overclaims and unsupported assertions: describing 27% churn as 'extreme' is an overstatement; claiming practicality based on sub‑20‑second runs without a comparable baseline is unsubstantiated; no multiple runs or confidence intervals are reported to assess variability.",
+            "The contribution list includes a note about the missing baseline as if it were a finding, which misrepresents a methodological flaw as a scientific contribution."
+          ],
+          "Originality": 1,
+          "Quality": 1,
+          "Clarity": 2,
+          "Significance": 1,
+          "Overall": 3,
+          "Decision": "Reject"
+        }
+      },
+      "decisions": [
+        {
+          "weakness_id": 1,
+          "weakness_summary": "The central claim—that focal loss improves performance over standard cross-entro",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 2,
+          "weakness_summary": "All metrics are derived from a single training run per gamma value. There is no ",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 3,
+          "weakness_summary": "The early stopping criterion is defined as minimizing the focal (training) loss,",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 4,
+          "weakness_summary": "The manuscript is truncated mid-sentence in the Background section, preventing a",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 5,
+          "weakness_summary": "The approach is a straightforward application of an existing loss function to a ",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 6,
+          "weakness_summary": "No meaningful baseline: The cross‑entropy baseline was not instrumented to recor",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 7,
+          "weakness_summary": "No statistical significance: Only a single train‑test split is used, with no mul",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 8,
+          "weakness_summary": "Potential data leakage and unclear data split: The paper states that test‑set me",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 9,
+          "weakness_summary": "Incomplete ablation and missing baselines: Only gamma is varied; the alpha balan",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 10,
+          "weakness_summary": "No hyperparameter justification: The choice of network architecture (256, 128, 6",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 11,
+          "weakness_summary": "Cherry‑picked training‑time comparison: The baseline’s cross‑entropy run recorde",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 12,
+          "weakness_summary": "Inadequate related work: only one specific churn prediction reference is cited (",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 13,
+          "weakness_summary": "Critical missing baseline: the paper admits that the standard cross-entropy run ",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 14,
+          "weakness_summary": "Overclaims and unsupported assertions: describing 27% churn as 'extreme' is an o",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        },
+        {
+          "weakness_id": 15,
+          "weakness_summary": "The contribution list includes a note about the missing baseline as if it were a",
+          "accept": true,
+          "reason": "Fallback: could not evaluate"
+        }
+      ],
+      "accepted": 15,
+      "rejected": 0
+    }
+  ]
+}

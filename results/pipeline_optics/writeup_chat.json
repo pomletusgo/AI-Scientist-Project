@@ -1,0 +1,713 @@
+
+# aider chat started at 2026-08-10 18:09:13
+
+> Can't initialize prompt toolkit: Found xterm-256color, while expecting a Windows console. Maybe try to run this program using "winpty" or run it in cmd.exe instead. Or otherwise, in case of Cygwin, use the Python executable that is compiled for Cygwin.  
+
+#### We've provided the `latex/template.tex` file to the project. We will be filling it in section by section.  
+####   
+#### First, please fill in the "Title" and "Abstract" sections of the writeup.  
+####   
+#### Some tips are provided below:  
+####   
+#### GUIDANCE: Frame your abstract around the key trade-off you addressed and the systematic approach you developed to resolve it. State the problem, your insight, the solution, and the evidence.  
+####   
+####   
+#### - TL;DR of the paper  
+#### - What are we trying to do and why is it relevant?  
+#### - Why is this hard?   
+#### - How do we solve it (i.e. our contribution!)  
+#### - How do we verify that we solved it (e.g. Experiments and results)  
+####   
+#### Please make sure the abstract reads smoothly and is well-motivated. This should be one continuous paragraph with no breaks between the lines.  
+####   
+####   
+#### IMPORTANT — Figure Availability:  
+#### A method overview figure `method_figure.png` may have been auto-generated and placed in the  
+#### project directory. If it exists, reference it in the Introduction or Method section with  
+#### an appropriate \includegraphics command and a descriptive caption explaining the framework.  
+#### Check `notes.txt` for any generated figure descriptions.  
+####   
+#### Before every paragraph, please include a brief description of what you plan to write in that paragraph in a comment.  
+####   
+#### Be sure to first name the file and use *SEARCH/REPLACE* blocks to perform these edits.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Great job! Now criticize and refine only the Abstract that you just wrote.  
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay particular attention to fixing any errors such as:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Please fill in the Introduction of the writeup. Some tips are provided below:  
+####   
+#### GUIDANCE: Open by establishing the key trade-off in the domain. Motivate your approach as a principled resolution. End with clearly listed contributions that map to specific aspects of the trade-off.  
+####   
+####   
+#### - Longer version of the Abstract, i.e. of the entire paper  
+#### - What are we trying to do and why is it relevant?  
+#### - Why is this hard?   
+#### - How do we solve it (i.e. our contribution!)  
+#### - How do we verify that we solved it (e.g. Experiments and results)  
+#### - New trend: specifically list your contributions as bullet points  
+#### - Extra space? Future work!  
+####   
+####   
+#### Be sure to use \cite or \citet where relevant, referring to the works provided in the file.  
+#### Do not cite anything that is not already in `references.bib`. Do not add any new entries to this.  
+####   
+#### Keep the experimental results (figures and tables) only in the Results section, and make sure that any captions are filled in.  
+####   
+#### IMPORTANT — Method Figure: If `method_figure.png` exists in the project directory, include it with  
+#### a proper \begin{figure}...\end{figure} block and a descriptive caption. The best location is  
+#### at the beginning of the Method section or at the end of the Introduction. The caption should  
+#### describe the overall framework: the problem, the proposed approach, and how components interact.  
+#### Do NOT include this figure in multiple sections — place it once at the most appropriate location.  
+####   
+#### In this pass, do not reference anything in later sections of the paper.  
+####   
+#### Before every paragraph, please include a brief description of what you plan to write in that paragraph in a comment.  
+####   
+#### Be sure to first name the file and use *SEARCH/REPLACE* blocks to perform these edits.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Great job! Now criticize and refine only the Introduction that you just wrote.  
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay particular attention to fixing any errors such as:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Please fill in the Background of the writeup. Some tips are provided below:  
+####   
+####   
+#### - Academic Ancestors of our work, i.e. all concepts and prior work that are required for understanding our method.   
+#### - Usually includes a subsection, Problem Setting, which formally introduces the problem setting and notation (Formalism) for our method. Highlights any specific assumptions that are made that are unusual.   
+#### - Note: If our paper introduces a novel problem setting as part of its contributions, it's best to have a separate Section.  
+####   
+####   
+#### Be sure to use \cite or \citet where relevant, referring to the works provided in the file.  
+#### Do not cite anything that is not already in `references.bib`. Do not add any new entries to this.  
+####   
+#### Keep the experimental results (figures and tables) only in the Results section, and make sure that any captions are filled in.  
+####   
+#### IMPORTANT — Method Figure: If `method_figure.png` exists in the project directory, include it with  
+#### a proper \begin{figure}...\end{figure} block and a descriptive caption. The best location is  
+#### at the beginning of the Method section or at the end of the Introduction. The caption should  
+#### describe the overall framework: the problem, the proposed approach, and how components interact.  
+#### Do NOT include this figure in multiple sections — place it once at the most appropriate location.  
+####   
+#### In this pass, do not reference anything in later sections of the paper.  
+####   
+#### Before every paragraph, please include a brief description of what you plan to write in that paragraph in a comment.  
+####   
+#### Be sure to first name the file and use *SEARCH/REPLACE* blocks to perform these edits.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Great job! Now criticize and refine only the Background that you just wrote.  
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay particular attention to fixing any errors such as:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Please fill in the Method of the writeup. Some tips are provided below:  
+####   
+#### GUIDANCE: For each component of your method, clearly explain the design rationale — what specific problem does it solve and why is this approach effective? Show how components work together as a coherent system.  
+####   
+####   
+#### - What we do. Why we do it. All described using the general Formalism introduced in the Problem Setting and building on top of the concepts / foundations introduced in Background.  
+####   
+####   
+#### Be sure to use \cite or \citet where relevant, referring to the works provided in the file.  
+#### Do not cite anything that is not already in `references.bib`. Do not add any new entries to this.  
+####   
+#### Keep the experimental results (figures and tables) only in the Results section, and make sure that any captions are filled in.  
+####   
+#### IMPORTANT — Method Figure: If `method_figure.png` exists in the project directory, include it with  
+#### a proper \begin{figure}...\end{figure} block and a descriptive caption. The best location is  
+#### at the beginning of the Method section or at the end of the Introduction. The caption should  
+#### describe the overall framework: the problem, the proposed approach, and how components interact.  
+#### Do NOT include this figure in multiple sections — place it once at the most appropriate location.  
+####   
+#### In this pass, do not reference anything in later sections of the paper.  
+####   
+#### Before every paragraph, please include a brief description of what you plan to write in that paragraph in a comment.  
+####   
+#### Be sure to first name the file and use *SEARCH/REPLACE* blocks to perform these edits.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Great job! Now criticize and refine only the Method that you just wrote.  
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay particular attention to fixing any errors such as:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Please fill in the Experimental Setup of the writeup. Some tips are provided below:  
+####   
+####   
+#### - How do we test that our stuff works? Introduces a specific instantiation of the Problem Setting and specific implementation details of our Method for this Problem Setting.  
+#### - Do not imagine unknown hardware details.  
+#### - Includes a description of the dataset, evaluation metrics, important hyperparameters, and implementation details.  
+####   
+####   
+#### Be sure to use \cite or \citet where relevant, referring to the works provided in the file.  
+#### Do not cite anything that is not already in `references.bib`. Do not add any new entries to this.  
+####   
+#### Keep the experimental results (figures and tables) only in the Results section, and make sure that any captions are filled in.  
+####   
+#### IMPORTANT — Method Figure: If `method_figure.png` exists in the project directory, include it with  
+#### a proper \begin{figure}...\end{figure} block and a descriptive caption. The best location is  
+#### at the beginning of the Method section or at the end of the Introduction. The caption should  
+#### describe the overall framework: the problem, the proposed approach, and how components interact.  
+#### Do NOT include this figure in multiple sections — place it once at the most appropriate location.  
+####   
+#### In this pass, do not reference anything in later sections of the paper.  
+####   
+#### Before every paragraph, please include a brief description of what you plan to write in that paragraph in a comment.  
+####   
+#### Be sure to first name the file and use *SEARCH/REPLACE* blocks to perform these edits.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Great job! Now criticize and refine only the Experimental Setup that you just wrote.  
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay particular attention to fixing any errors such as:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Please fill in the Results of the writeup. Some tips are provided below:  
+####   
+#### GUIDANCE: Include a balanced assessment: What benefits did you achieve? What costs were incurred? What are the limitations? Support every claim with specific experimental results. Compare fairly against baselines.  
+####   
+####   
+#### - Shows the results of running Method on our problem described in Experimental Setup.  
+#### - Includes statements on hyperparameters and other potential issues of fairness.  
+#### - Only includes results that have actually been run and saved in the logs. Do not hallucinate results that don't exist.  
+#### - If results exist: compares to baselines and includes statistics and confidence intervals.   
+#### - If results exist: includes ablation studies to show that specific parts of the method are relevant.  
+#### - Discusses limitations of the method.  
+#### - Make sure to include all the results from the experiments, and include all relevant figures.  
+####   
+####   
+#### Be sure to use \cite or \citet where relevant, referring to the works provided in the file.  
+#### Do not cite anything that is not already in `references.bib`. Do not add any new entries to this.  
+####   
+#### Keep the experimental results (figures and tables) only in the Results section, and make sure that any captions are filled in.  
+####   
+#### IMPORTANT — Method Figure: If `method_figure.png` exists in the project directory, include it with  
+#### a proper \begin{figure}...\end{figure} block and a descriptive caption. The best location is  
+#### at the beginning of the Method section or at the end of the Introduction. The caption should  
+#### describe the overall framework: the problem, the proposed approach, and how components interact.  
+#### Do NOT include this figure in multiple sections — place it once at the most appropriate location.  
+####   
+#### In this pass, do not reference anything in later sections of the paper.  
+####   
+#### Before every paragraph, please include a brief description of what you plan to write in that paragraph in a comment.  
+####   
+#### Be sure to first name the file and use *SEARCH/REPLACE* blocks to perform these edits.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Great job! Now criticize and refine only the Results that you just wrote.  
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay particular attention to fixing any errors such as:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Please fill in the Conclusion of the writeup. Some tips are provided below:  
+####   
+#### GUIDANCE: Summarize the trade-off resolved and the key innovations. Honestly discuss limitations and suggest concrete directions for future work that build on your findings.  
+####   
+####   
+#### - Brief recap of the entire paper.  
+#### - To keep going with the analogy, you can think of future work as (potential) academic offspring.  
+####   
+####   
+#### Be sure to use \cite or \citet where relevant, referring to the works provided in the file.  
+#### Do not cite anything that is not already in `references.bib`. Do not add any new entries to this.  
+####   
+#### Keep the experimental results (figures and tables) only in the Results section, and make sure that any captions are filled in.  
+####   
+#### IMPORTANT — Method Figure: If `method_figure.png` exists in the project directory, include it with  
+#### a proper \begin{figure}...\end{figure} block and a descriptive caption. The best location is  
+#### at the beginning of the Method section or at the end of the Introduction. The caption should  
+#### describe the overall framework: the problem, the proposed approach, and how components interact.  
+#### Do NOT include this figure in multiple sections — place it once at the most appropriate location.  
+####   
+#### In this pass, do not reference anything in later sections of the paper.  
+####   
+#### Before every paragraph, please include a brief description of what you plan to write in that paragraph in a comment.  
+####   
+#### Be sure to first name the file and use *SEARCH/REPLACE* blocks to perform these edits.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Great job! Now criticize and refine only the Conclusion that you just wrote.  
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay particular attention to fixing any errors such as:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Please fill in the Related Work of the writeup. Some tips are provided below:  
+####   
+####   
+#### - Academic siblings of our work, i.e. alternative attempts in literature at trying to solve the same problem.   
+#### - Goal is to “Compare and contrast” - how does their approach differ in either assumptions or method? If their method is applicable to our Problem Setting I expect a comparison in the experimental section. If not, there needs to be a clear statement why a given method is not applicable.   
+#### - Note: Just describing what another paper is doing is not enough. We need to compare and contrast.  
+####   
+####   
+#### For this section, very briefly sketch out the structure of the section, and clearly indicate what papers you intend to include.  
+#### Do this all in LaTeX comments using %.  
+#### The related work should be concise, only plan to discuss the most relevant work.  
+#### Do not modify `references.bib` to add any new citations, this will be filled in at a later stage.  
+####   
+#### Be sure to first name the file and use *SEARCH/REPLACE* blocks to perform these edits.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Great job! Now criticize and refine only the Related Work that you just wrote.  
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay particular attention to fixing any errors such as:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Great job! Now that there is a complete draft of the entire paper, let's refine each section again.  
+#### First, re-think the Title if necessary. Keep this concise and descriptive of the paper's concept, but try by creative with it.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Criticize and refine the Abstract only. Recall the advice:  
+####   
+#### GUIDANCE: Frame your abstract around the key trade-off you addressed and the systematic approach you developed to resolve it. State the problem, your insight, the solution, and the evidence.  
+####   
+####   
+#### - TL;DR of the paper  
+#### - What are we trying to do and why is it relevant?  
+#### - Why is this hard?   
+#### - How do we solve it (i.e. our contribution!)  
+#### - How do we verify that we solved it (e.g. Experiments and results)  
+####   
+#### Please make sure the abstract reads smoothly and is well-motivated. This should be one continuous paragraph with no breaks between the lines.  
+####   
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay attention to how it fits in with the rest of the paper.  
+#### Identify any redundancies (e.g. repeated figures or repeated text), if there are any, decide where in the paper things should be cut.  
+#### Identify where we can save space, and be more concise without weakening the message of the text.  
+#### Fix any remaining errors as before:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Criticize and refine the Related Work only. Recall the advice:  
+####   
+####   
+#### - Academic siblings of our work, i.e. alternative attempts in literature at trying to solve the same problem.   
+#### - Goal is to “Compare and contrast” - how does their approach differ in either assumptions or method? If their method is applicable to our Problem Setting I expect a comparison in the experimental section. If not, there needs to be a clear statement why a given method is not applicable.   
+#### - Note: Just describing what another paper is doing is not enough. We need to compare and contrast.  
+####   
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay attention to how it fits in with the rest of the paper.  
+#### Identify any redundancies (e.g. repeated figures or repeated text), if there are any, decide where in the paper things should be cut.  
+#### Identify where we can save space, and be more concise without weakening the message of the text.  
+#### Fix any remaining errors as before:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Criticize and refine the Introduction only. Recall the advice:  
+####   
+#### GUIDANCE: Open by establishing the key trade-off in the domain. Motivate your approach as a principled resolution. End with clearly listed contributions that map to specific aspects of the trade-off.  
+####   
+####   
+#### - Longer version of the Abstract, i.e. of the entire paper  
+#### - What are we trying to do and why is it relevant?  
+#### - Why is this hard?   
+#### - How do we solve it (i.e. our contribution!)  
+#### - How do we verify that we solved it (e.g. Experiments and results)  
+#### - New trend: specifically list your contributions as bullet points  
+#### - Extra space? Future work!  
+####   
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay attention to how it fits in with the rest of the paper.  
+#### Identify any redundancies (e.g. repeated figures or repeated text), if there are any, decide where in the paper things should be cut.  
+#### Identify where we can save space, and be more concise without weakening the message of the text.  
+#### Fix any remaining errors as before:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Criticize and refine the Background only. Recall the advice:  
+####   
+####   
+#### - Academic Ancestors of our work, i.e. all concepts and prior work that are required for understanding our method.   
+#### - Usually includes a subsection, Problem Setting, which formally introduces the problem setting and notation (Formalism) for our method. Highlights any specific assumptions that are made that are unusual.   
+#### - Note: If our paper introduces a novel problem setting as part of its contributions, it's best to have a separate Section.  
+####   
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay attention to how it fits in with the rest of the paper.  
+#### Identify any redundancies (e.g. repeated figures or repeated text), if there are any, decide where in the paper things should be cut.  
+#### Identify where we can save space, and be more concise without weakening the message of the text.  
+#### Fix any remaining errors as before:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Criticize and refine the Method only. Recall the advice:  
+####   
+#### GUIDANCE: For each component of your method, clearly explain the design rationale — what specific problem does it solve and why is this approach effective? Show how components work together as a coherent system.  
+####   
+####   
+#### - What we do. Why we do it. All described using the general Formalism introduced in the Problem Setting and building on top of the concepts / foundations introduced in Background.  
+####   
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay attention to how it fits in with the rest of the paper.  
+#### Identify any redundancies (e.g. repeated figures or repeated text), if there are any, decide where in the paper things should be cut.  
+#### Identify where we can save space, and be more concise without weakening the message of the text.  
+#### Fix any remaining errors as before:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Criticize and refine the Experimental Setup only. Recall the advice:  
+####   
+####   
+#### - How do we test that our stuff works? Introduces a specific instantiation of the Problem Setting and specific implementation details of our Method for this Problem Setting.  
+#### - Do not imagine unknown hardware details.  
+#### - Includes a description of the dataset, evaluation metrics, important hyperparameters, and implementation details.  
+####   
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay attention to how it fits in with the rest of the paper.  
+#### Identify any redundancies (e.g. repeated figures or repeated text), if there are any, decide where in the paper things should be cut.  
+#### Identify where we can save space, and be more concise without weakening the message of the text.  
+#### Fix any remaining errors as before:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Criticize and refine the Results only. Recall the advice:  
+####   
+#### GUIDANCE: Include a balanced assessment: What benefits did you achieve? What costs were incurred? What are the limitations? Support every claim with specific experimental results. Compare fairly against baselines.  
+####   
+####   
+#### - Shows the results of running Method on our problem described in Experimental Setup.  
+#### - Includes statements on hyperparameters and other potential issues of fairness.  
+#### - Only includes results that have actually been run and saved in the logs. Do not hallucinate results that don't exist.  
+#### - If results exist: compares to baselines and includes statistics and confidence intervals.   
+#### - If results exist: includes ablation studies to show that specific parts of the method are relevant.  
+#### - Discusses limitations of the method.  
+#### - Make sure to include all the results from the experiments, and include all relevant figures.  
+####   
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay attention to how it fits in with the rest of the paper.  
+#### Identify any redundancies (e.g. repeated figures or repeated text), if there are any, decide where in the paper things should be cut.  
+#### Identify where we can save space, and be more concise without weakening the message of the text.  
+#### Fix any remaining errors as before:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### Criticize and refine the Conclusion only. Recall the advice:  
+####   
+#### GUIDANCE: Summarize the trade-off resolved and the key innovations. Honestly discuss limitations and suggest concrete directions for future work that build on your findings.  
+####   
+####   
+#### - Brief recap of the entire paper.  
+#### - To keep going with the analogy, you can think of future work as (potential) academic offspring.  
+####   
+#### Make this complete in this pass, do not leave any placeholders.  
+####   
+#### Pay attention to how it fits in with the rest of the paper.  
+#### Identify any redundancies (e.g. repeated figures or repeated text), if there are any, decide where in the paper things should be cut.  
+#### Identify where we can save space, and be more concise without weakening the message of the text.  
+#### Fix any remaining errors as before:  
+#### - Unenclosed math symbols  
+#### - Only reference figures that exist in our directory  
+#### - LaTeX syntax errors  
+#### - Numerical results that do not come from explicit experiments and logs  
+#### - Repeatedly defined figure labels  
+#### - References to papers that are not in the .bib file, DO NOT ADD ANY NEW CITATIONS!  
+#### - Unnecessary verbosity or repetition, unclear text  
+#### - Results or insights in the `notes.txt` that have not yet need included  
+#### - Any relevant figures that have not yet been included in the text  
+#### - Closing any \begin{figure} with a \end{figure} and \begin{table} with a \end{table}, etc.  
+#### - Duplicate headers, e.g. duplicated \section{Introduction} or \end{document}  
+#### - Unescaped symbols, e.g. shakespeare_char should be shakespeare\_char in text  
+#### - Incorrect closing of environments, e.g. </end{figure}> instead of \end{figure}  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### The image method_figure.png not found in the directory. The images in the directory are: [].  
+#### Please ensure that the figure is in the directory and that the filename is correct. Check the notes to see what each figure contains.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### The image results_plot_1.png not found in the directory. The images in the directory are: [].  
+#### Please ensure that the figure is in the directory and that the filename is correct. Check the notes to see what each figure contains.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  
+
+#### The image results_plot_2.png not found in the directory. The images in the directory are: [].  
+#### Please ensure that the figure is in the directory and that the filename is correct. Check the notes to see what each figure contains.  
+> litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-v4-pro  
+> Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers  
+> https://docs.litellm.ai/docs/providers  
+> Open URL for more info? (Y)es/(N)o/(D)on't ask again [Yes]: y  

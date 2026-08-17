@@ -1,0 +1,38 @@
+# Title: Causal-Masked Neural Networks for Counterfactual Glucose Trajectory Simulation in Diabetes
+# Experiment description: Introduce a SparseCausalLinear layer that replaces the first nn.Linear in the MLP. It uses a predefined binary mask that respects a causal DAG ordering (e.g., root variables feed into all, treatments only feed into outcomes). During inference, an intervention mode sets a feature node to a chosen value and zeroes its incoming parent connections, then propagates through the network to predict the outcome. Training is conducted jointly on all endogenous variables, but a reconstruction loss can be added. To evaluate, generate synthetic tabular data from a known causal model (linear/nonlinear) with known intervention effects. Compare the Causal-Masked MLP against a standard MLP and a linear SCM on: (1) mean absolute error of predicted intervention effects vs. ground truth, (2) standard prediction accuracy. Metrics include ATE bias, counterfactual error, and R². All modifications are contained in a new model class and an intervention module; the existing data loading, evaluation, and plotting code can be reused. The synthetic data generation will be implemented as a separate utility within the script.
+## Run 0: Baseline
+Results: {'data': {'best_val_loss_mean': 0.4383, 'final_train_loss_mean': 0.4177, 'total_train_time_mean': 1.3, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Baseline results.
+
+## Run 1: Re‑run baseline (default data)
+Results: {'data': {'best_val_loss_mean': 0.436, 'final_train_loss_mean': 0.415, 'total_train_time_mean': 1.2, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Same standard MLP training as Run 0 but on possibly different random seed or default dataset; confirms baseline stability.
+
+## Run 2: Standard MLP on synthetic data (linear DAG)
+Results: {'synthetic_mlp': {'best_val_loss_mean': 0.2178, 'final_train_loss_mean': 0.3581, 'total_train_time_mean': 4.1, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Train a standard MLP (3 features: X0, X1, T) on the synthetic dataset generated from a known linear causal DAG. After training, evaluate standard prediction (R²) on the test set, compute ATE bias (|predicted ATE – true ATE| where true ATE = 2.0), and counterfactual MAE for both do(T=1) and do(T=0). This serves as a supervised baseline for causal estimation without any domain‑specific inductive bias.
+
+## Run 3: Causal‑Masked MLP on synthetic data (linear DAG)
+Results: {'synthetic_causal': {'best_val_loss_mean': 0.2414, 'final_train_loss_mean': 0.3512, 'total_train_time_mean': 5.0, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Train the CausalMaskedMLP (SparseCausalLinear‑like architecture) on the same synthetic dataset. The model uses only the root confounder (X0) in the first branch, then concatenates the treatment (T) before the final layers, enforcing a causal structure. After training, evaluate standard R², ATE bias, and counterfactual MAE. This run tests whether the causal inductive bias improves causal estimates compared to a fully‑connected MLP.
+
+## Run 4: Linear SCM on synthetic data (linear DAG)
+Results: {'synthetic_linear': {'best_val_loss_mean': 0.2828, 'final_train_loss_mean': 0.3033, 'total_train_time_mean': 9.0, 'avg_inference_tokens_per_second_mean': 0.0}}
+Description: Train a linear model (nn.Linear) on the same synthetic dataset as a simple linear SCM baseline. Evaluate R², ATE bias, and counterfactual MAE. This provides a lower‑bound comparison for both the standard MLP and the Causal‑Masked MLP.
+
+## Run 5: Causal‑Masked MLP on nonlinear synthetic data (nonlinear DAG)
+Description: Train the CausalMaskedMLP on a new synthetic dataset with a nonlinear outcome function: Y = 0.3·X0 + 2.0·T + 0.5·T² + 0.2·X1 + ε, where the true ATE is 2.5. Evaluate R², ATE bias, and counterfactual MAE. This tests whether the causal inductive bias helps when the underlying causal mechanism is nonlinear.
+
+## Plots
+
+The `plot.py` script generates the following figures (saved under the `plots/` directory):
+
+- **best_val_loss.png**: Bar chart comparing the best validation loss across all runs. Lower values indicate better predictive performance on the held-out validation set. This metric is reported for every run and captures overall fitting quality independent of causal objectives.
+
+- **r2_score.png**: Bar chart showing the R² score on the test set for runs evaluated on synthetic data (runs 2–5). R² measures how well the predicted outcomes match the true outcomes; higher values indicate better standard prediction accuracy. For runs that did not produce an R² value (e.g., the baseline runs on default CSV data) this bar is absent.
+
+- **ate_bias.png**: Bar chart of the absolute bias of the predicted average treatment effect (|pred_ATE – true_ATE|) for the synthetic runs. A lower value indicates that the intervention effect estimated from the model’s counterfactual predictions is closer to the true causal effect. This directly evaluates the causal estimation capability of each model.
+
+- **mae_do1.png**: Bar chart of the mean absolute error between the model’s predicted outcomes under intervention do(T=1) and the ground-truth counterfactual outcomes for the same test points. This metric isolates the performance of each model for a specific intervention, complementing the ATE bias.
+
+Together these figures support the comparisons described in the experiment: standard MLP vs. causal‑masked MLP vs. linear SCM, on linear and nonlinear data.

@@ -1,0 +1,4 @@
+{
+  "system": "You are an AI researcher specializing in medicine, specifically gut microbiome and cancer immunotherapy. Your research focuses on addressing the core trade-off: Reproducibility of microbiome-based ICB response biomarkers across diverse cohorts versus mechanistic understanding of how gut microbes modulate immunotherapy..",
+  "task_description": "Design experiments related to A Modular Platform Combining Engineered TANB77 Colonization and Pilin-Mimetic Nanoparticles for Personalized Enhancement of Immune Checkpoint Blockade. Core problem: Gut microbiome biomarkers for immune checkpoint blockade (ICB) response have been inconsistent across studies, and the mechanisms by which specific microbes enhance ICB efficacy remain poorly understood.. Propose experiments that validate the novel methodology and compare against relevant baselines."
+}
